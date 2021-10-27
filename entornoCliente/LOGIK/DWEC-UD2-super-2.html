@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+Ejercicio Supermercado - Paso 2
+DWEC-UD2
+autor: Carlos Boni
+fecha: Octubre de 2021
+ENUNCIADO:
+  Siguiendo con el supermercado, el orden de llegada de los usuarios
+  se debe pedir por pantalla, ingresando 3 números.
+  Hay que validar que sean adecuados, o sea que sean números
+  y todos diferentes y entre 1 y 3.
+  También se desea saber con un mensaje en la pantalla
+  el tiempo transcurrido en total entre la primera llegada y la
+  última salida.
+USAR preferentemente:
+  prompt, parseInt(), const, console.log(), window.alert()
+-->
+
+<head>
+  <title>Ejercicios Javascript</title>
+  <meta charset="UTF-8">
+  <style>
+	body {
+		background: rgba(0, 0, 128, 0.1) /* Azul al 10% */
+	}
+  </style>
+</head>
+<body>
+<h1>SUPERMERCADO - Paso 2</h1>
+
+
+<script>
+  // poner el código para la solución aquí
+  valido = true;
+
+  function esValido(a, b, c){
+    if((a>=1 && a<=3 && a!=b && a!=c) && (b>=1 && b<=3 && b!=c) && (c>=1 && c<=3))
+      return true;
+    else
+      return false;
+
+  }
+  let num1 = parseInt(prompt("Quien llega primero?"));
+  let num2 = parseInt(prompt("Quien llega segundo?"));
+  let num3 = parseInt(prompt("Quien llega tercero?"));
+
+  let cliente1 = 60;
+  let cliente2 = 120;
+  let cliente3 = 180;
+
+  if(esValido(num1, num2, num3)){
+    document.write((cliente1+cliente2+cliente3)+"<br>");
+  }else{
+    document.write("Los numeros ingresados no son correctos. ");
+  }
+
+</script>
+</body>
+</html>
