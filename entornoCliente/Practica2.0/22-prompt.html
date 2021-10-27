@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+Ejercicio de Ejemplo
+DWEC-UD2
+autor: Carlos Boni
+fecha: Agosto 2021
+ENUNCIADO:
+  Leer nombre y edad de una persona y mostrarlos en pantalla.
+USAR preferentemente:
+  prompt, document.write
+-->
+
+<head>
+  <title>Ejercicios Javascript</title>
+  <meta charset="UTF-8">
+  <style>
+	body {
+		background: rgba(0, 0, 128, 0.1) /* Azul al 10% */
+	}
+  </style>
+</head>
+<body style="background:light-gray">
+<h1>PROMPT</h1>
+
+<script>
+    // poner el código para la solución aquí
+    let nombre = prompt("Introduzca su nombre: ");
+    let edad = parseInt(prompt("Introduzca su edad: "));
+
+    document.write(`¡Hola ${nombre}! ¿De verdad tienes ${edad} años? ¡No los aparentas!`);
+  
+</script>
+
+</body>
+</html>

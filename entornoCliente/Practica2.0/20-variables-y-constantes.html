@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+Ejercicio de Ejemplo
+DWEC-UD2
+autor: Carlos Boni
+fecha: Agosto 2021
+ENUNCIADO:
+  Leer 2 números usando JS.
+  Si el primer valor es mayor o igual que el segundo,
+  entonces sumar y restar el 1º con el 2º en ese orden,
+  si son iguales, multiplicarlos.
+USAR preferentemente:
+  const, let, prompt, document.write
+-->
+
+<head>
+  <title>Ejercicios Javascript</title>
+  <meta charset="UTF-8">
+  <style>
+	body {
+		background: rgba(0, 0, 128, 0.1) /* Azul al 10% */
+	}
+  </style>
+</head>
+<body>
+<h1>VARIABLES y CONSTANTES (desde 2015)</h1>
+
+<script>
+  // poner el código para la solución aquí
+
+  let num1 = parseInt(prompt("Introduce el primer numero: "));
+  let num2 = parseInt(prompt("Introduce el segundo numero: "));
+  let operacion;
+
+
+
+  if(num1 > num2 || num2 > num1){
+    operacion = num1 + num2;
+    document.write(`${num1} + ${num2} = ${operacion}<br>`);
+    operacion = num1 - num2;
+    document.write(`${num1} - ${num2} = ${operacion}<br>`);
+  }else{
+    operacion = num1 * num2;
+    document.write(`${num1} x ${num2} = ${operacion}<br>`);
+  }
+
+
+</script>
+
+</body>
+</html>

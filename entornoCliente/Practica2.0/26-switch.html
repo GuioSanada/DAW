@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+Ejercicio de Ejemplo
+DWEC-UD2
+autor: Carlos Boni
+fecha: Agosto 2021
+ENUNCIADO:
+  Leer un número del 1 al 5 usando JavaScript.
+  Mostrarlo en texto (uno cuando es 1, etc.)
+  Indicar un mensaje si el nro no está en ese rango.
+USAR preferentemente:
+  SWITCH
+-->
+
+<head>
+  <title>Ejercicios Javascript</title>
+  <meta charset="UTF-8">
+  <style>
+	body {
+		background: rgba(0, 0, 128, 0.1) /* Azul al 10% */
+	}
+  </style>
+</head>
+<body>
+<h1>SWITCH</h1>
+
+
+<script>
+  // poner el código para la solución aquí
+  let num1 = parseInt(prompt("Introduzca un numero del 1 al 5: "));
+
+  switch(num1){
+    case 1:
+      document.write("Uno");
+      break;
+    case 2:
+      document.write("Dos");
+      break;
+    case 3:
+      document.write("Tres");
+      break;
+    case 4:
+      document.write("Cuatro");
+      break;
+    case 5:
+      document.write("Cinco");
+      break;
+    default:
+      document.write("El numero introducido no es valido. ");
+  }
+
+</script>
+</body>
+</html>

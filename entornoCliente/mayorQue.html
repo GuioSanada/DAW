@@ -1,0 +1,79 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <script>
+
+            // DECLARACION DE VARIABLES
+            const numeroFijo = 20;
+            var flag = false;
+            var num1;
+            var num2;
+            var controlNum = true;
+
+            // PETICION Y CONTROL DE LOS NUMEROS 
+           
+                while(flag==false){ // mientras que la bandera sea falsa seguiremos pidiendo el dato
+                    if(controlNum != false){ // Condicion para mostrar el mensaje inicial o un mensaje de error. 
+                        num1 = parseInt(prompt("Introduzca el primer numero: "));
+                        if(!isNaN(num1)) // Si es un numero entonces OK 
+                            flag = true;
+                        else // Si no, cambiamos de valor la variable de control para mostrar un mensaje de error en la siguiente iteracion.
+                            controlNum = false;
+                    }else{
+                        num1 = parseInt(prompt("Dato INCORRECTO. Por favor asegurese de que es un numero valido. Introduzca el primer numero: "));
+                        if(!isNaN(num1))
+                            flag = true;
+                    }
+                   
+                
+                }
+                // Seteamos a los valores iniciales las variables de control para poder llevar a cabo el mismo procedimiento.
+                flag = false;
+                controlNum = true;
+
+                // Mismo procedimiento que con el primer numero, ahora con el segundo 
+                // (lo idoneo seria hacer una funcion que tuviera este procedimiento y te devolviese un true o false, 
+                // dependiendo de si fuese valido o no el dato que hemos introducido)
+                while(flag==false){
+                    if(controlNum != false){
+                        num2 = parseInt(prompt("Introduzca el segundo numero: "));
+                        if(!isNaN(num2))
+                            flag = true;
+                        else
+                            controlNum = false;
+                    }else{
+                        num2 = parseInt(prompt("Dato INCORRECTO. Por favor asegurese de que es un numero valido. Introduzca el segundo numero: "));
+                        if(!isNaN(num1))
+                            flag = true;
+                    }               
+                }
+                
+
+                // Mostrar datos
+                document.write(`<p> Los numeros introducidos son: ${numeroFijo}, ${num1} y ${num2}<br>`);
+
+                // Comprobacion de cual numero es mayor.
+                if(num1 > num2 && num1 > numeroFijo)
+                    document.write(`El mayor de los tres numeros es: ${num1}`);
+                else if(num2 > num1 && num2 > numeroFijo)
+                    document.write(`El mayor de los tres numeros es ${num2}`);
+                else if(numeroFijo > num1 && numeroFijo > num2)
+                    document.write(`El mayor de los tres numeros es: ${numeroFIjo}`);
+                else
+                    document.write("Los tres numeros son iguales.");
+                document.write("</p>");
+            
+            
+
+            
+
+
+        </script>
+
+
+    </body>
+</html>

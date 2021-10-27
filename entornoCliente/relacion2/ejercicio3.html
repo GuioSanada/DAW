@@ -1,0 +1,44 @@
+<html>
+    <body>
+
+        <form>
+            <p><input type="number" name="num1" id="num1"/></p>
+            <p><input type="number" name="num2" id="num2"/></p>
+            <p><button id="Enviar">Enviar</button></p>
+        </form>
+
+        <script>
+            document.getElementById("Enviar").addEventListener("click", comparar);
+
+
+            function comparar(){
+                let numeroFijo = 20;
+
+                // Recogemos y castaemos a entero los valores que estan dentro de los inputs.
+                var num1 = parseInt(document.getElementById("num1").value);
+                var num2 = parseInt(document.getElementById("num2").value);
+                document.clear();
+
+                //document.write("Valores: " + num1 + " " + num2 + " " + numeroFijo);
+                if(num1 == num2)
+                    alert(`Los numeros ${num1} y ${num2} son iguales.`);
+                       
+                // Comprobacion de cual numero es mayor.
+                if(num1 > num2 && num1 >= numeroFijo)
+                    document.write(`El mayor de los tres numeros es: ${num1}`);
+                else if(num2 > num1 && num2 >= numeroFijo)
+                    document.write(`El mayor de los tres numeros es ${num2}`);
+                else if(numeroFijo > num1 && numeroFijo > num2)
+                    document.write(`El mayor de los tres numeros es: ${numeroFijo}`);
+                else
+                    document.write("Los tres numeros son iguales.");
+
+            }
+        </script>
+
+
+
+
+
+    </body>
+</html>

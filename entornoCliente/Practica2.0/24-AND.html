@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+Ejercicio de Ejemplo
+DWEC-UD2
+autor: Carlos Boni
+fecha: Agosto 2021
+ENUNCIADO:
+  Leer 3 números usando JS.
+  Mostrar el mayor.
+USAR preferentemente:
+  if anidados y operador lógico AND
+-->
+
+<head>
+  <title>Ejercicios Javascript</title>
+  <meta charset="UTF-8">
+  <style>
+	body {
+		background: rgba(0, 0, 128, 0.1) /* Azul al 10% */
+	}
+  </style>
+</head>
+<body>
+<h1>AND</h1>
+
+
+<script>
+    // poner el código para la solución aquí
+    let num1 = parseInt(prompt("Introduce el primer numero: "));
+    let num2 = parseInt(prompt("Introduce el segundo numero: "));
+    let num3 = parseInt(prompt("Introduce el tercer numero: "));
+
+    if(num1 >= num2 && num1 >= num3){
+      document.write(num1+"<br>");
+    }else if(num2 > num1 && num2 >= num3){
+      document.write(num2+"<br>");
+    }else if(num3 > num1 && num3 > num2){
+      document.write(num3+"<br>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+Ejercicio de Ejemplo
+DWEC-UD2
+autor: Carlos Boni
+fecha: Agosto 2021
+ENUNCIADO:
+  Averiguar por qué da error este ejercicio.
+-->
+
+<head>
+  <title>Ejercicios Javascript</title>
+  <meta charset="UTF-8">
+  <style>
+	body {
+		background: rgba(0, 0, 128, 0.1) /* Azul al 10% */
+	}
+  </style>
+</head>
+<body>
+<h1>VARIABLES LOCALES Y GLOBALES</h1>
+
+<script>
+  // indicar la causa del problema aquí como comentario
+  // Al usar modo estricto no podemos usar variables no declaradas. Por lo tanto
+  // si comentamos la linea. Funciona correctamente
+  
+  
+  //'use strict';
+
+  function imprimir()
+  {
+    x=100; //error
+    document.write(x+'<br>');
+  }
+
+  imprimir();
+  document.write(x+'<br>');
+</script>
+
+</body>
+</html>
