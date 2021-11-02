@@ -69,7 +69,7 @@
             $malSonante2 = "cabron";
             $malSonante3 = "gilipollas";
 
-            if(strpos($cadena, $malSonante1) == true || strpos($cadena, $malSonante2) == true || strpos($cadena, $malSonante3) == true)
+            if(strpos($cadena, $malSonante1) || strpos($cadena, $malSonante2)  || strpos($cadena, $malSonante3) )
                 return false;
             else
                 return true;
