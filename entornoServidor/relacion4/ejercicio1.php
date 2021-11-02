@@ -26,6 +26,22 @@
                     return true;
             }
 
+            function validarPrecio($num){
+
+                $pattern = '^[0-9]+$^';
+                if(!preg_match($pattern, $num))
+                    return false;
+                else
+                    return true;
+            }
+
+            function validarConsola($con){
+                if($con == "")
+                    return false;
+                else
+                    return true;
+            }
+
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 
                 if(empty($_POST['nombre'])){
@@ -44,12 +60,17 @@
                     $error_consola = "Seleccione una consola";
                 }else{
                     $consola = depurar($_POST['consola']);
+                    /*if(validarConsola($consola) == false)
+                        $error_consola = "Seleccione una opcion. No marque la opcion en blanca";*/
                 }
 
                 if(empty($_POST['precio'])){
                     $error_precio = "Debe insertar un precio";
                 }else{
                     $precio = depurar($_POST['precio']);
+                    if(!validarPrecio($precio)){
+                        $error_precio = "El formato del precio introducido no es correcto. Verifiquelo.";
+                    }
                 }
                 if($error_consola == null && $error_nombre == null && $error_precio == null){
                     echo "Los datos introducidos son: <br>";
@@ -66,6 +87,7 @@
                     <p>Inserte nombre: <input type="text" name="nombre"  title="Debe insertar un nombre compuesto por caracteres y/o numeros" required/> <span class="error">* <?php echo $error_nombre;?></span> </p>
                     <p>Inserte consola: 
                     <select name="consola" required>
+                        <!-- <option value=""></option> -->
                         <option value="PS5">PS 5</option>
                         <option value="XBOXSX">XBOX SERIES X</option>
                         <option value="SWITCH">SWITCH</option>

@@ -30,12 +30,13 @@
                 return true;
         }
 
-        function validarEdad($num){
-            $pattern = '^[0-9]{1,2}$^';
-            if(!preg_match($pattern, $num) || $num < 0 || $num > 120)
-                return false;
-            else
-                return true;
+        function conseguirEdad($cadenaFecha){
+            $cadenaFecha = substr($cadenaFecha, 0, 4);
+            $fecha = date("Y");
+            $cadenaFecha = $fecha - $cadenaFecha;
+            if($cadenaFecha <18)
+                $error_edad = "El usuario es menor de edad.";
+            return $cadenaFecha;
             
         }
 
@@ -54,6 +55,25 @@
             else  
                 return true;
         }
+        function comprobarLetraDNI($cadena){
+            $letra = substr($cadena, -1);
+            $numero = substr($cadena, 0, -1);
+            if(substr("TRWAGMYFPDXBNJZSQVHLCKE", $numero%23, 1) == $letra)
+                return true;
+            else
+                return false;
+        }
+
+        function comprobarMalsonantesMail($cadena){
+            $malSonante1 = "puta";
+            $malSonante2 = "cabron";
+            $malSonante3 = "gilipollas";
+
+            if(strpos($cadena, $malSonante1) || strpos($cadena, $malSonante2) || strpos($cadena, $malSonante3))
+                return false;
+            else
+                return true;
+        }
         
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 if(empty($_POST['dni'])){
@@ -61,10 +81,12 @@
                 }
                     
                 else{
-                    $dni = depurar($dni);
+                    $dni = depurar($_POST['dni']);
                     if(!validarDNI($dni)){
                         $error_dni = "El DNI es incorrecto. Compruebe el formato.";
                     }
+                    if(!comprobarLetraDNI($dni))
+                        $error_dni = "Comprueba el dni introducido. La letra no es correcta";
                         
                 }
 
@@ -109,21 +131,22 @@
                     $error_nombre  = "Debe rellenar el campo.";
                 }else{
                     $edad = depurar($_POST['edad']);
-                    $edad = (int) $edad;
-                    if(!validarEdad($edad)){
-                        $error_edad = "La edad introducida es incorrecta.";
-                    }
-                    if(validarEdad($edad) && $edad < 18)
-                        $error_edad = "El usuario es menor de edad.";
+
+                    $edad = conseguirEdad($edad);
                 }
 
                 if(empty($_POST['mail'])){
                     $error_mail  = "Debe rellenar el campo.";
                 }else{
-                    $mail = depurar($mail);
+                    $mail = depurar($_POST['mail']);
                     if(!validarMail($mail))
                         $error_mail = "El mail introducido tiene un formato incorrecto.";
+                    if(!comprobarMalsonantesMail($mail))
+                        $error_mail = "El mail contiene palabras no permitidas gamberrete.";
                 }
+
+                //echo "dni: ".$_POST['dni']." nombre: ".$_POST['nombre']." apellido1: ".$_POST['apellido1']." apellido2: ".$_POST['apellido2']." edad: ".$_POST['edad']." mail: ".$_POST['mail']."<br><br>";
+                //echo "·$nombre, $apellido1, $apellido2, $dni, $mail, $edad";
 
                 if($error_apellido1 == null && $error_apellido2 == null && $error_dni == null && $error_edad == null && $error_mail == null && $error_nombre == null){
                     echo "Los datos introducidos son:<br>";
@@ -141,12 +164,12 @@
         
         <form action="<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]);?>" method="POST">
 
-                    <p>DNI: <input type="text" name="DNI" required/><span class="error">* <?php echo $error_dni;?></p>
+                    <p>DNI: <input type="text" name="dni" required/><span class="error">* <?php echo $error_dni;?></p>
                     <p>Nombre: <input type="text" name="nombre" required/><span class="error">* <?php echo $error_nombre;?></p>
                     <p>Primer apellido: <input type="text" name="apellido1" required/><span class="error">* <?php echo $error_apellido1;?></p>
                     <p>Segundo apellido: <input type="text" name="apellido2" required/><span class="error">* <?php echo $error_apellido2;?></p>
                     <p>Edad: <input type="date" name="edad" required/><span class="error">* <?php echo $error_edad;?></p>
-                    <p>Email: <input type="text" name="email" required/><span class="error">* <?php echo $error_mail;?></p>
+                    <p>Email: <input type="text" name="mail" required/><span class="error">* <?php echo $error_mail;?></p>
                     <p> <input type="submit" value="Validar" required/></p>  
         </form>
     </body>
