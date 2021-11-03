@@ -1,15 +1,20 @@
 <html>
     <head>
         <script>
-
-            function objetoPacientes(nombreAUX,edadAUX){
+            class pacientes{
+                constructor(nombreAUX, edadAUX){
                     this.nombre = nombreAUX;
                     this.edad = edadAUX;
                     this.fechaAlta = new Date();
+                }
+
+                
             }
 
+            
+
             function mostrarDatosPaciente(){
-                paciente1 = new objetoPacientes(document.getElementById("nombre").value, document.getElementById("edad").value);
+                paciente1 = new pacientes(document.getElementById("nombre").value, document.getElementById("edad").value);
                 document.write("<p>Usuario: " + paciente1.nombre);
                 document.write(`<p>Edad: ${paciente1.edad}`);
                 document.write("<p>Fecha de alta: " + paciente1.fechaAlta.getDate() +"/"+(paciente1.fechaAlta.getMonth()+1)+"/"+ paciente1.fechaAlta.getFullYear());
@@ -26,8 +31,6 @@
             <label>Edad: </label> <input type="number" min="0" max="100" id="edad"/>
             <button id="Registrar" onclick="mostrarDatosPaciente()">Registrar</button> 
         </form>
-        <script>
-            //document.getElementById("Registrar").addEventListener("click", mostrarDatosPaciente);
-        </script>
+        
     </body>
 </html>

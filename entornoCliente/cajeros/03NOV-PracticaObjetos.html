@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+Ejercicio de Ejemplo
+DWEC-UD2
+autor: Carlos Boni
+fecha: Agosto 2021
+ENUNCIADO:
+  Ir gradualmente mejorando, paso a paso, hasta llegar
+  donde mejor puedan o quieran. Lo importante es
+  superarse a ustedes mismos, e intentar ser el mejor si
+  se animan...
+  Iremos añadiendo elementos durante la clase.
+  INICIAL: crear el botón con leyenda COMENZAR que al
+  pincharlo pone en cada caja el mensaje: "cola: vacía"
+
+-->
+
+<head>
+  <title>Ejercicios Javascript</title>
+  <meta charset="UTF-8">
+  <style>
+    :root {
+      --fondoweb: white;
+      --fondozonaboton: lightblue;
+      --fondozonacajas: lightpink;
+      --fondocajas:red;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0pt;
+      padding: 5pt;
+    }
+
+    body {
+      background-color: var(--fondoweb);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    p {
+      font-size: calc(8px + 0.5vw + 0.5vh);
+    }
+    h1 {
+      font-size: calc(16px + 0.5vw + 0.5vh);
+    }
+
+    #zonacabecera {
+      background-color: transparent;
+      height: 5vh;
+    }
+
+    #zonaboton {
+      background-color: var(--fondozonaboton);
+      width: 25%;
+      height: 10vh;
+      margin: 5vh 1vw 5vh 1vw;
+    }
+
+    #zonacajas {
+      background-color: var(--fondozonacajas);
+      width: 35%;
+      height: 70vh;
+      overflow: hidden;
+      margin: 0vh 1vw 5vh 1vw;
+    }
+
+    .caja {
+      background-color: transparent;
+      border-style:solid;
+      border-width:1%;
+      border-color:white;
+      margin:4%;
+      width: 90%;
+      height: 22%;
+      /* visibility:hidden; */
+    }
+
+    .cajaAbierta {
+      background-color: var(--fondocajas);
+      visibility:visible;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div id="zonacabecera">
+    <h1>SUPERMERCADO</h1>
+  </div>
+  <div id="zonaboton"><p>AQUÍ VA EL BOTÓN</p></div>
+  <div id="zonacajas">
+    <div class="caja"><p>CAJA1</p></div>
+    <div class="caja"><p>CAJA2</p></div>
+    <div class="caja"><p>CAJA3</p></div>
+    <div class="caja cajaAbierta" onclick="procesoCaja(caja4)"><p>CAJA4</p></div>
+  </div>
+
+  <script>
+  
+  class caja{
+    constructor(numCaja){
+      this.numeroCaja = numCaja; //identificador de la caja, nombre, numero.
+      this.estado = false; // Esta abierta(true), o esta cerrada(false). De primeras esta cerrada, nosotros debemos abrirla clicando en ella.
+      this.contadorCola = 0; // por defecto esta cerrada por lo tanto hay 0 personas esperando. 
+      //1 -> 1 persona esperando. 2-> personas esperando... 
+      //4-> 4 personas esperando mostrar alerta de que hay mucha gente esperando.
+    }
+
+    //METODOS
+    cambiarEstado(){ //Este metodo nos va a cambiar el estado
+      if(!this.estado) // Si esta en false(cerrada)
+        this.estado = true; //la abre
+      else // Si por el contrario esta en true (abierta)
+        this.estado = false; //la cerramos
+    }
+    aumentarContador(){
+      this.contadorCola += 1;
+      if(this.contadorCola >= 4)
+        alert(`Tienes muchos clientes esperando en la caja ${this.contador}`);
+      document.getElementById("caja"+this.numeroCaja)
+    }
+  }
+
+  function procesoCaja(cajaRegistradora){
+    if(cajaRegistradora.estado)
+      cajaRegistradora.aumentarContador();
+    else
+      cajaRegistradora.cambiarEstado();
+  }
+
+  caja4 = new caja(4);
+
+
+
+  </script>
+
+</body>
+
+</html>
