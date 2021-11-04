@@ -56,7 +56,7 @@
                     }
                 }
 
-                if(empty($_POST['consola'])){
+                if(empty($_POST['consola']) || $_POST['consola'] == ""){
                     $error_consola = "Seleccione una consola";
                 }else{
                     $consola = depurar($_POST['consola']);
@@ -87,7 +87,7 @@
                     <p>Inserte nombre: <input type="text" name="nombre"  title="Debe insertar un nombre compuesto por caracteres y/o numeros" required/> <span class="error">* <?php echo $error_nombre;?></span> </p>
                     <p>Inserte consola: 
                     <select name="consola" required>
-                        <!-- <option value=""></option> -->
+                        <option value="" selected disabled hidden >Seleccione una consola...</option>
                         <option value="PS5">PS 5</option>
                         <option value="XBOXSX">XBOX SERIES X</option>
                         <option value="SWITCH">SWITCH</option>
