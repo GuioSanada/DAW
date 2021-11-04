@@ -92,10 +92,10 @@ ENUNCIADO:
   </div>
   <div id="zonaboton"><p>AQUÍ VA EL BOTÓN</p></div>
   <div id="zonacajas">
-    <div class="caja"><p>CAJA1</p></div>
-    <div class="caja"><p>CAJA2</p></div>
-    <div class="caja"><p>CAJA3</p></div>
-    <div class="caja cajaAbierta" onclick="procesoCaja(caja4)"><p>CAJA4</p></div>
+    <div class="caja" id="caja1"><p>CAJA1. Clientes esperando:<span id="contadorCaja1"></span></p></div>
+    <div class="caja" id="caja2"><p>CAJA2. Clientes esperando:<span id="contadorCaja2"></span></p></div>
+    <div class="caja" id="caja3"><p>CAJA3. Clientes esperando:<span id="contadorCaja3"></span></p></div>
+    <div class="caja cajaAbierta" id="caja4" onclick="procesoCaja(caja4)"><p>CAJA4. Clientes esperando: <span id="contadorCaja4"></span></p></div>
   </div>
 
   <script>
@@ -111,16 +111,23 @@ ENUNCIADO:
 
     //METODOS
     cambiarEstado(){ //Este metodo nos va a cambiar el estado
-      if(!this.estado) // Si esta en false(cerrada)
+      if(!this.estado){ // Si esta en false(cerrada)
         this.estado = true; //la abre
+        document.getElementById("caja"+this.numeroCaja).style.backgroundColor="green";
+        document.getElementById("contadorCaja"+this.numeroCaja).innerHTML = 0;
+      }
+      
       else // Si por el contrario esta en true (abierta)
         this.estado = false; //la cerramos
     }
     aumentarContador(){
       this.contadorCola += 1;
+      let contadorAux = document.getElementById("contadorCaja"+this.numeroCaja).innerHTML;
+      contadorAux = parseInt(contadorAux)+1;
+      document.getElementById("contadorCaja"+this.numeroCaja).innerHTML = contadorAux;
       if(this.contadorCola >= 4)
-        alert(`Tienes muchos clientes esperando en la caja ${this.contador}`);
-      document.getElementById("caja"+this.numeroCaja)
+        alert(`Tienes muchos clientes esperando en la caja ${this.contadorCola}`);
+      
     }
   }
 
