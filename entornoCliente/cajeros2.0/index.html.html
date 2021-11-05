@@ -28,18 +28,21 @@ ENUNCIADO:
 </head>
 
 <body>
-  <div id="zonacabecera">
-    <h1>SUPERMERCADO</h1>
+  <div class = "wrapper">
+    <div id="zonacabecera">
+      <h1>SUPERMERCADO</h1>
+    </div>
+    <div id="botonCP">Panel de control</div>
+    <div id="zonaboton" id="añadirCliente" onclick="añadirCliente()"><p>Añadir un cliente <span hidden="hidden">1</span></p></div>
+    <div id="zonacajas">
+      
+      <div class="caja cajaAbierta" id="caja1" onclick="procesoCaja(caja1)"><p>CAJA1. Clientes esperando:<span id="contadorCaja1"></span></p></div>
+      <div class="caja cajaAbierta" id="caja2" onclick="procesoCaja(caja2)"><p>CAJA2. Clientes esperando:<span id="contadorCaja2"></span></p></div>
+      <div class="caja cajaAbierta" id="caja3" onclick="procesoCaja(caja3)"><p>CAJA3. Clientes esperando:<span id="contadorCaja3"></span></p></div>
+      <div class="caja cajaAbierta" id="caja4" onclick="procesoCaja(caja4)"><p>CAJA4. Clientes esperando: <span id="contadorCaja4"></span></p></div>
+    </div>
   </div>
-
-  <div id="zonaboton" id="añadirCliente" onclick="añadirCliente()"><p>Añadir un cliente <span hidden="hidden">1</span></p></div>
-  <div id="zonacajas">
-    
-    <div class="caja cajaAbierta" id="caja1" onclick="procesoCaja(caja1)"><p>CAJA1. Clientes esperando:<span id="contadorCaja1"></span></p></div>
-    <div class="caja cajaAbierta" id="caja2" onclick="procesoCaja(caja2)"><p>CAJA2. Clientes esperando:<span id="contadorCaja2"></span></p></div>
-    <div class="caja cajaAbierta" id="caja3" onclick="procesoCaja(caja3)"><p>CAJA3. Clientes esperando:<span id="contadorCaja3"></span></p></div>
-    <div class="caja cajaAbierta" id="caja4" onclick="procesoCaja(caja4)"><p>CAJA4. Clientes esperando: <span id="contadorCaja4"></span></p></div>
-  </div>
+  
   
   <script>
     caja1 = new caja(1);
