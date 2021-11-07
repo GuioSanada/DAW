@@ -20,6 +20,7 @@ ENUNCIADO:
 <head>
   <title>Ejercicios Javascript</title>
   <meta charset="UTF-8">
+  <script src="./js/claseCaja.js"></script>
   <style>
     :root {
       --fondoweb: white;
@@ -90,46 +91,17 @@ ENUNCIADO:
   <div id="zonacabecera">
     <h1>SUPERMERCADO</h1>
   </div>
-  <div id="zonaboton"><p>AQUÍ VA EL BOTÓN</p></div>
+
   <div id="zonacajas">
     <div class="caja" id="caja1"><p>CAJA1. Clientes esperando:<span id="contadorCaja1"></span></p></div>
     <div class="caja" id="caja2"><p>CAJA2. Clientes esperando:<span id="contadorCaja2"></span></p></div>
     <div class="caja" id="caja3"><p>CAJA3. Clientes esperando:<span id="contadorCaja3"></span></p></div>
     <div class="caja cajaAbierta" id="caja4" onclick="procesoCaja(caja4)"><p>CAJA4. Clientes esperando: <span id="contadorCaja4"></span></p></div>
   </div>
-
-  <script>
   
-  class caja{
-    constructor(numCaja){
-      this.numeroCaja = numCaja; //identificador de la caja, nombre, numero.
-      this.estado = false; // Esta abierta(true), o esta cerrada(false). De primeras esta cerrada, nosotros debemos abrirla clicando en ella.
-      this.contadorCola = 0; // por defecto esta cerrada por lo tanto hay 0 personas esperando. 
-      //1 -> 1 persona esperando. 2-> personas esperando... 
-      //4-> 4 personas esperando mostrar alerta de que hay mucha gente esperando.
-    }
-
-    //METODOS
-    cambiarEstado(){ //Este metodo nos va a cambiar el estado
-      if(!this.estado){ // Si esta en false(cerrada)
-        this.estado = true; //la abre
-        document.getElementById("caja"+this.numeroCaja).style.backgroundColor="green";
-        document.getElementById("contadorCaja"+this.numeroCaja).innerHTML = 0;
-      }
-      
-      else // Si por el contrario esta en true (abierta)
-        this.estado = false; //la cerramos
-    }
-    aumentarContador(){
-      this.contadorCola += 1;
-      let contadorAux = document.getElementById("contadorCaja"+this.numeroCaja).innerHTML;
-      contadorAux = parseInt(contadorAux)+1;
-      document.getElementById("contadorCaja"+this.numeroCaja).innerHTML = contadorAux;
-      if(this.contadorCola >= 4)
-        alert(`Tienes muchos clientes esperando en la caja ${this.contadorCola}`);
-      
-    }
-  }
+  <script>
+   
+  
 
   function procesoCaja(cajaRegistradora){
     if(cajaRegistradora.estado)
