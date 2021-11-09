@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+body{
+    background: #BDCC94;
+    font-family: 'Oxygen', sans-serif;
+}
+
+#formulario{
+    
+    color: white;
+    background: #A9B6CC;
+    border: 3px solid #FFFFFF;
+
+    max-width: 768px;
+    margin: 60px auto;
+    position: relative;
+}
+
+.underline {
+    border-bottom: solid 2px #FFFFFF;
+    margin: -0.512em auto;
+    width: 80px;
+    margin-bottom: 10%;
+}
+
+button {
+    overflow: visible;
+  }
+  
+  button, select {
+    text-transform: none;
+  }
+  
+  button, input, select, textarea {
+    color: #5A5A5A;
+    font: inherit;
+    margin: 0;
+  }
+  input {
+    line-height: normal;
+  }
+  
+  textarea {
+    overflow: auto;
+  }
+
+  h1 {
+
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+  }
