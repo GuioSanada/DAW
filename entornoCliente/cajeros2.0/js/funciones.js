@@ -25,7 +25,12 @@ function procesoCaja(cajaRegistradora){
 
   }
 
+  window.onload=function () {
+    var objDiv = document.getElementById("pantallaConsola");
+    objDiv.scrollTop = objDiv.scrollHeight;
+}
 
+document.getElementById('pantallaConsola').scrollTop = 9999999;
 
 /*2 5 1 9
 

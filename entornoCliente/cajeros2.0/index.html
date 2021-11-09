@@ -18,12 +18,12 @@ ENUNCIADO:
 -->
 
 <head>
+  <link href="./css/style.css" rel="stylesheet" type="text/css">
   <title>Ejercicios Javascript</title>
   <meta charset="UTF-8">
-  <script src="./js/claseCaja.js"></script>
-  <script src="./js/claseCliente.js"></script>
-  <script src="./js/funciones.js"></script>
-  <link href="./css/style.css" rel="StyleSheet" type="text/css">
+  <script src="./js/claseCaja.js" ></script>
+  <script src="./js/claseCliente.js" ></script>
+  <script src="./js/funciones.js" ></script>
 
 </head>
 
@@ -31,23 +31,37 @@ ENUNCIADO:
 
   <header>
     <h1>SUPERMERCADO</h1>
-    <div id="botonCP">Panel de control</div>
+    
+
   </header>
 
   <main>
     <div class = "wrapper">
+      <section id="zonacajas">
+        <div class="caja" id="caja1" onclick="procesoCaja(caja1)"><p>CAJA1. Clientes esperando:<span id="contadorCaja1"></span></p></div>
+        <div class="caja" id="caja2" onclick="procesoCaja(caja2)"><p>CAJA2. Clientes esperando:<span id="contadorCaja2"></span></p></div>
+        <div class="caja" id="caja3" onclick="procesoCaja(caja3)"><p>CAJA3. Clientes esperando:<span id="contadorCaja3"></span></p></div>
+        <div class="caja" id="caja4" onclick="procesoCaja(caja4)"><p>CAJA4. Clientes esperando: <span id="contadorCaja4"></span></p></div>
+      </section>
     
-      
-      
-      
-      <div id="zonacajas">
-        <div class="caja cajaAbierta" id="caja1" onclick="procesoCaja(caja1)"><p>CAJA1. Clientes esperando:<span id="contadorCaja1"></span></p></div>
-        <div class="caja cajaAbierta" id="caja2" onclick="procesoCaja(caja2)"><p>CAJA2. Clientes esperando:<span id="contadorCaja2"></span></p></div>
-        <div class="caja cajaAbierta" id="caja3" onclick="procesoCaja(caja3)"><p>CAJA3. Clientes esperando:<span id="contadorCaja3"></span></p></div>
-        <div class="caja cajaAbierta" id="caja4" onclick="procesoCaja(caja4)"><p>CAJA4. Clientes esperando: <span id="contadorCaja4"></span></p></div>
-      </div>
+      <section id="zonaPantalla">
+        <div  id="pantallaConsola"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo risus, ullamcorper nec tellus vitae, luctus tempor metus. Maecenas fringilla ex vel mattis porttitor. Proin in condimentum diam. Vivamus tempus commodo orci vel faucibus. Phasellus et augue in nulla luctus tempus. Pellentesque justo arcu, sodales nec ultricies a, accumsan vel purus. Nulla facilisi.
+
+          Phasellus id malesuada nisi. Sed orci arcu, rhoncus sed leo eu, viverra iaculis odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ultricies ornare neque nec dictum. Quisque accumsan quam non ultricies sollicitudin. Phasellus malesuada consectetur est sed consectetur. Nam faucibus varius euismod. Suspendisse in tempor justo. Nam nibh neque, congue eu cursus sed, pellentesque in orci. Nullam tempor libero dolor, eu bibendum est rhoncus quis. Praesent at convallis lacus. Donec sollicitudin magna vel lorem viverra accumsan. Mauris tincidunt elementum dictum. Sed convallis libero in orci placerat ultrices vitae ut augue. Praesent eget ullamcorper ex. Donec in tellus eget ante imperdiet auctor.
+          
+          Vestibulum placerat justo ac vestibulum ullamcorper. Fusce dignissim id lorem porta auctor. Duis ullamcorper feugiat tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sodales pharetra lacus, id facilisis dolor aliquam eu. Donec in viverra felis, nec euismod ante. Nam in nunc nec est porta elementum. Suspendisse potenti. Etiam ipsum velit, semper non urna vitae, mattis imperdiet risus. Mauris facilisis condimentum tincidunt. Etiam sollicitudin, metus non commodo pharetra, elit ipsum hendrerit tortor, eu faucibus mi lorem vel erat. Duis sollicitudin eget erat ut placerat. Ut aliquet, lectus eu pellentesque ullamcorper, sapien est fringilla lorem, in mollis mauris neque quis metus. Donec ut nisl eu augue consequat condimentum ac vel quam. Morbi bibendum, justo sit amet hendrerit tincidunt, sapien eros auctor mi, eget luctus purus erat vel diam. Nullam aliquam ac erat nec eleifend.
+          
+          Nulla neque orci, faucibus ut diam eu, consequat cursus velit. Vestibulum auctor urna vitae quam egestas laoreet. Suspendisse potenti. Suspendisse vitae porta lectus. Sed imperdiet libero sit amet augue posuere, nec lacinia ipsum feugiat. Integer a viverra augue. Donec euismod condimentum sapien, nec molestie leo porta sit amet. Curabitur sed posuere leo. Fusce eget ipsum nunc.
+          
+          Nullam efficitur est leo. Aenean orci ex, fringilla eu lacus id, interdum ornare urna. Sed nec dolor et mauris iaculis lobortis. Ut a libero purus. Suspendisse nec molestie est. Maecenas lobortis, arcu ut tempus tincidunt, purus tortor fringilla nibh, fringilla maximus mi lectus at lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus, purus vel tincidunt tincidunt, nisl diam tincidunt enim, sed feugiat metus nisi eget orci. Donec placerat commodo lorem, ac ullamcorper tellus cursus id. Sed tincidunt mi nunc, vel ornare turpis accumsan et. Pellentesque arcu ipsum, maximus et congue non, dignissim non augue. Sed fermentum sed orci ac porttitor. Sed imperdiet, lorem et molestie auctor, orci nunc varius ligula, eu hendrerit arcu ipsum vel velit. Maecenas suscipit ligula et tincidunt vestibulum.
+        </p>
+        </div>
+        <form>
+          <input type="text" name="enter" id="enter" />
+          <input type="button" name="enviar" value="Enviar" id="enviar" />
+        </form>
+      </section>
     </div>
-    
     
     <script>
       caja1 = new caja(1);
@@ -58,6 +72,10 @@ ENUNCIADO:
   
     </script>
   </main>
+
+  <footer>
+  
+  </footer>
   
   
 
