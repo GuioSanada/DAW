@@ -2,12 +2,11 @@
         constructor(numCaja){
             this.numeroCaja = numCaja; //identificador de la caja, nombre, numero.
             this.estado = false; // Esta abierta(true), o esta cerrada(false). De primeras esta cerrada, nosotros debemos abrirla clicando en ella.
-            this.contadorCola = 0; // por defecto esta cerrada por lo tanto hay 0 personas esperando. 
-            //1 -{">"} 1 persona esperando. 2-> personas esperando... 
-            //4-> 4 personas esperando mostrar alerta de que hay mucha gente esperando.
+            this.contadorCola = 0; // por defecto esta cerrada por lo tanto hay 0 personas esperando. //1 -{">"} 1 persona esperando. 2-> personas esperando... //4-> 4 personas esperando mostrar alerta de que hay mucha gente esperando.
             this.horaApertura = null; //Aqui guardaremos la hora a la que se abrió la caja.
             this.horaCierre = null; // Aqui guardaremos la hora a la que se cerro la caja.
-            this.tiempoEspera = null; 
+            this.tiempoEspera = null;
+            this.totalFacturado = null; 
 
         }
 
