@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Mohave&family=Oxygen:wght@300;400;700&family=Roboto:wght@400;700&display=swap');
+
+*, *:before, *:after {
+	box-sizing:border-box;
+    font-family: 'Mohave', sans-serif;
+}
+
+body {
+	padding:24px;
+	font-family:'Source Sans Pro', sans-serif;
+	margin:0;
+    background-color: #F2F2F2;
+}
+
+h1,h2,h3,h4,h5,h6 {
+
+	margin:0;
+    color: #A68F1F;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.container {
+	max-width: 1000px;
+	margin-right:auto;
+	margin-left:auto;
+	display:flex;
+    flex-direction: column;
+	justify-content:center;
+	align-items:center;
+    gap: 1.5rem;
+	min-height:100vh;
+}
+
+.table {
+    color: #A6A297;
+	width:100%;
+	border:1px solid #A6A297;
+}
+
+.table-header   {
+    color: whitesmoke;
+	width:100%;
+	background-color: #A68F1F;
+	padding:(12 * 1.5) 0;
+}
+
+	
+.filtro{
+   
+}

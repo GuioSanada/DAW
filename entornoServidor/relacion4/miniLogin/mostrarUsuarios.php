@@ -1,12 +1,13 @@
 <html>
     <head>
-
+    <link rel="stylesheet" href="./css/styleMostrar.css" >
     </head>
 
     <body>
-
-        <table id="usuarios">
-            <tr>
+        <div class="container">
+        <h1>Listado de usuarios</h1>
+        <table class="table" id="usuarios">
+            <tr class="table-header">
                 <td>DNI: </td>
                 <td>Nombre: </td>
                 <td>Primer apellido: </td>
@@ -35,6 +36,17 @@
                 }
             ?>
         </table>
+        <div class="filtro">
+            <form method="POST" action="<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]);?>">
+                <label for="mail" name="mail">Buscar por mail:</label>
+                <input type="mail" id="mail" name="mail"/>
+                <input type="submit" value="Buscar">
+                <input type="hidden" value="mostrarUsuarios" name="tipoFormulario"/>
+            </form>
+
+        </div>
+        </div>
+        
 
     </body>
 

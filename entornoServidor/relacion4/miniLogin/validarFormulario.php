@@ -70,77 +70,91 @@
         }
         
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                if(empty($_POST['dni'])){
-                    $error_dni = "Debe rellenar el campo.";
-                }
-                    
-                else{
-                    $dni = depurar($_POST['dni']);
-                    if(!validarDNI($dni)){
-                        $error_dni = "El DNI es incorrecto. Compruebe el formato.";
+
+                //FORMULARIO DE MOSTRAR USUARIOS
+                if($_POST['tipoFormulario'] == "mostrarUsuarios"){
+                    if(!empty($_POST['mail'])){
+                        $mail = $_POST['mail'];
+                        $stmt = $dbh->prepare("SELECT * FROM usuarios WHERE mail = $mail");
+    
+                        $stmt -> setFetchMode(PDO::FETCH_ASSOC);
+            
+                        $stmt -> execute();
                     }
-                    if(!comprobarLetraDNI($dni))
-                        $error_dni = "Comprueba el dni introducido. La letra no es correcta";
+                }
+
+                // FORMULARIO DE INSERTAR USUARIOS
+                if($_POST['tipoFormulario'] == "insertarUsuarios"){
+                    if(empty($_POST['dni'])){
+                        $error_dni = "Debe rellenar el campo.";
+                    }
                         
-                }
-
-                if(empty($_POST['nombre'])){
-                    $error_nombre  = "Debe rellenar el campo.";
-                }
-                    
-                else{
-                    $nombre = depurar($_POST['nombre']);
-                    if(validarNombre($nombre)){
-                        $nombre = ucfirst($nombre); 
-                    }else{
-                        $error_nombre =  "El nombre es incorrecto. Compruebe que no tiene caracteres extraños.";
+                    else{
+                        $dni = depurar($_POST['dni']);
+                        if(!validarDNI($dni)){
+                            $error_dni = "El DNI es incorrecto. Compruebe el formato.";
+                        }
+                        if(!comprobarLetraDNI($dni))
+                            $error_dni = "Comprueba el dni introducido. La letra no es correcta";
+                            
                     }
-                               
-                }
-
-                if(empty($_POST['apellido1'])){
-                    $error_apellido1 = "Debe rellenar el campo.";
-                }else{
-                    $apellido1 = depurar($_POST['apellido1']);
-                    if(validarNombre($apellido1)){
-                        $apellido1 = ucfirst($apellido1);
-                    }else{
-                        $error_apellido1 = "El apellido introducido es incorrecto. Compruebe que no tiene caraceteres extraños.";
+    
+                    if(empty($_POST['nombre'])){
+                        $error_nombre  = "Debe rellenar el campo.";
                     }
-                    
-                }
-
-                if(empty($_POST['apellido2'])){
-                    $error_apellido2  = "Debe rellenar el campo.";
-                }else{
-                    $apellido2 = depurar($_POST['apellido2']);
-                    if(validarNombre($apellido2)){
-                        $apellido2 = ucfirst($apellido2);
+                        
+                    else{
+                        $nombre = depurar($_POST['nombre']);
+                        if(validarNombre($nombre)){
+                            $nombre = ucfirst($nombre); 
+                        }else{
+                            $error_nombre =  "El nombre es incorrecto. Compruebe que no tiene caracteres extraños.";
+                        }
+                                   
+                    }
+    
+                    if(empty($_POST['apellido1'])){
+                        $error_apellido1 = "Debe rellenar el campo.";
                     }else{
-                        $error_apellido2 = "El apellido introducido es incorrecto. Compruebe que no tiene caracteres extraños.";
+                        $apellido1 = depurar($_POST['apellido1']);
+                        if(validarNombre($apellido1)){
+                            $apellido1 = ucfirst($apellido1);
+                        }else{
+                            $error_apellido1 = "El apellido introducido es incorrecto. Compruebe que no tiene caraceteres extraños.";
+                        }
+                        
+                    }
+    
+                    if(empty($_POST['apellido2'])){
+                        $error_apellido2  = "Debe rellenar el campo.";
+                    }else{
+                        $apellido2 = depurar($_POST['apellido2']);
+                        if(validarNombre($apellido2)){
+                            $apellido2 = ucfirst($apellido2);
+                        }else{
+                            $error_apellido2 = "El apellido introducido es incorrecto. Compruebe que no tiene caracteres extraños.";
+                        }
+                    }
+    
+                    if(empty($_POST['edad'])){
+                        $error_nombre  = "Debe rellenar el campo.";
+                    }else{
+                        $edad = depurar($_POST['edad']);
+    
+                        $edad = conseguirEdad($edad);
+                    }
+    
+                    if(empty($_POST['mail'])){
+                        $error_mail  = "Debe rellenar el campo.";
+                    }else{
+                        $mail = depurar($_POST['mail']);
+                        if(!validarMail($mail))
+                            $error_mail = "El mail introducido tiene un formato incorrecto.";
+                        if(!comprobarMalsonantesMail($mail))
+                            $error_mail = "El mail contiene palabras no permitidas gamberrete.";
                     }
                 }
 
-                if(empty($_POST['edad'])){
-                    $error_nombre  = "Debe rellenar el campo.";
-                }else{
-                    $edad = depurar($_POST['edad']);
-
-                    $edad = conseguirEdad($edad);
-                }
-
-                if(empty($_POST['mail'])){
-                    $error_mail  = "Debe rellenar el campo.";
-                }else{
-                    $mail = depurar($_POST['mail']);
-                    if(!validarMail($mail))
-                        $error_mail = "El mail introducido tiene un formato incorrecto.";
-                    if(!comprobarMalsonantesMail($mail))
-                        $error_mail = "El mail contiene palabras no permitidas gamberrete.";
-                }
-
-                //echo "dni: ".$_POST['dni']." nombre: ".$_POST['nombre']." apellido1: ".$_POST['apellido1']." apellido2: ".$_POST['apellido2']." edad: ".$_POST['edad']." mail: ".$_POST['mail']."<br><br>";
-                //echo "·$nombre, $apellido1, $apellido2, $dni, $mail, $edad";
 
                 
             }

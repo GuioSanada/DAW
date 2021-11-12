@@ -28,7 +28,7 @@
             }
             
         ?>
-        <div id="formulario">
+        <div id="formulario" name>
             <h1>&bull; Inserte un usuario &bull;</h1>
             <div class="underline"></div>   
             <form action="<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]);?>" method="POST">
@@ -45,23 +45,28 @@
                 
                 <div class="apellido1">
                     <label for="apellido1"></label>
-                    <input type="text" name="apellido1" required/><span class="error">* <?php echo $error_apellido1;?>
+                    <input type="text" placeholder="Perez" name="apellido1" required/><span class="error">* <?php echo $error_apellido1;?>
                 </div>
 
                 <div class="apellido2">
                     <label for="apellido2"></label>
-                    <input type="text" name="apellido2" required/><span class="error">* <?php echo $error_apellido2;?>
+                    <input type="text" placeholder="Blanco" name="apellido2" required/><span class="error">* <?php echo $error_apellido2;?>
                 </div>
 
                 <div class="edad">
                     <label for="edad"></label>
-                    <input type="date" name="edad" required/><span class="error">* <?php echo $error_edad;?>
+                    <input type="date" value="1986/05/02" name="edad" required/><span class="error">* <?php echo $error_edad;?>
                 </div>
 
                 <div class="mail">
                     <label for="mail"></label>
-                    <input type="text" name="mail" required/><span class="error">* <?php echo $error_mail;?>
+                    <input type="email" placeholder="PacoPerez@Blanco.com" name="mail" required/><span class="error">* <?php echo $error_mail;?>
                 </div>
+                
+                <div class="submit">
+                    <input type="submit" value="Registrar" id="form_button" />
+                </div>
+                <input type="hidden" value="insertarUsuario" name="tipoFormulario"/>
 
             </form>
         </div>
