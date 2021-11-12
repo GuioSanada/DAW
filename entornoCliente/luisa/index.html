@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <script>
+
+             
+
+            var numClientes = 3;
+            let k = 0;
+            let aleatorio = null;
+            
+            for(let i = 0; i<=3; i++){
+                aleatorio = parseInt((Math.round(Math.random() * (6-1)+1))*1000);
+                //document.write(`El numero aleatorio es ${aleatorio}<br>`);
+                setTimeout(holiCaracoli, aleatorio, aleatorio, i);
+                aleatorio = null;   
+
+            }
+            
+            function holiCaracoli(ale, o){
+                document.write(`Hola cliente ${o}. El numero aleatorio es ${ale}<br>`);
+            }
+            
+
+            
+
+            
+
+        </script>
+
+
+
+    </body>
+</html>
