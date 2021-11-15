@@ -1,4 +1,4 @@
-<html>
+ <html>
     <head>
         <link rel="stylesheet" href="./css/style.css">
     </head>
@@ -66,7 +66,7 @@
                 <div class="submit">
                     <input type="submit" value="Registrar" id="form_button" />
                 </div>
-                <input type="hidden" value="insertarUsuario" name="tipoFormulario"/>
+                <input type="hidden" value="insertarUsuarios" name="tipoFormulario"/>
 
             </form>
         </div>

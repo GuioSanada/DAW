@@ -17,13 +17,21 @@
             </tr>
             <?php
                 require 'database.php';
+                if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                    if(!empty($_POST['mail'])){
+                        $mail = $_POST['mail'];
+                        $stmt = $dbh->prepare("SELECT * FROM usuarios where mail = '$mail'");
+                    }
+                        
+                }else{
+                    $stmt = $dbh->prepare("SELECT * FROM usuarios");
 
-                $stmt = $dbh->prepare("SELECT * FROM usuarios");
-    
+                }
+
                 $stmt -> setFetchMode(PDO::FETCH_ASSOC);
-    
+        
                 $stmt -> execute();
-    
+
                 while($row = $stmt -> fetch()){
                     echo "<tr>";
                     echo "<td> {$row["dni"]} </td>";
@@ -34,6 +42,7 @@
                     echo "<td> {$row["mail"]} </td>";
                     echo "</tr>";
                 }
+                
             ?>
         </table>
         <div class="filtro">

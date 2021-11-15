@@ -68,7 +68,8 @@
             else
                 return true;
         }
-        
+
+        function comprobarMetodoEnvio(){
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 //FORMULARIO DE MOSTRAR USUARIOS
@@ -154,8 +155,8 @@
                             $error_mail = "El mail contiene palabras no permitidas gamberrete.";
                     }
                 }
-
-
-                
             }
+        }
+        
+            
 ?>
