@@ -70,6 +70,9 @@
         }
 
         function comprobarMetodoEnvio(){
+            
+        }
+        
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 //FORMULARIO DE MOSTRAR USUARIOS
@@ -77,10 +80,10 @@
                     if(!empty($_POST['mail'])){
                         $mail = $_POST['mail'];
                         $stmt = $dbh->prepare("SELECT * FROM usuarios WHERE mail = $mail");
-    
                         $stmt -> setFetchMode(PDO::FETCH_ASSOC);
-            
                         $stmt -> execute();
+
+                        
                     }
                 }
 
@@ -155,8 +158,8 @@
                             $error_mail = "El mail contiene palabras no permitidas gamberrete.";
                     }
                 }
+
+
+                
             }
-        }
-        
-            
 ?>

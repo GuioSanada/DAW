@@ -5,44 +5,49 @@ function procesoCaja(cajaRegistradora){
       cajaRegistradora.cambiarEstado();
   }
 
-  function obtenerCajaMenorTiempo(caja1, caja2, caja3, caja4){
-    let menor = caja1.tiempoEspera;
-    let cajaDevolver = caja1;
-    if(menor > caja2.tiempoEspera){
-      menor = caja2.tiempoEspera;
-      cajaDevolver = caja2;
+function crearCliente(contador){
+    let cliente1 = cliente(contador);
+    return cliente1;
+}
+
+function asignarClienteCaja(clienteAux){
+    let control = false; // variable para controlar si se ha añadido o no
+    let contador = 0; // contador para realizar el recorrido del array
+    while(!control && contador <= 3){ // recorremos el array con un while para poder salir en cuanto encontremos un resultado positivo.
+      if(cajas[contador].apta){ // Si es apta -> añadimos cliente. Cambiamos var de control a true
+        cajas[contador].listaClientes.push(clienteAux);
+        control = true;
+      }
+      contador++; // aumentamos contador. 
     }
-    
-    if(menor > caja3.tiempoEspera){
-      menor = caja3.tiempoEspera;
-      cajaDevolver = caja3;
+    // en el caso de que no encontremos una caja apta empezamos de 0.
+    // Recorremos el array de cajas buscando una caja cerrada.
+    // Abrimos la caja, y asignamos el cliente.
+    contador = 0;
+
+    if(!control){
+      while(!control && contador <= 3){
+        if(cajas[contador].estado == false){
+            cajas[contador].estado = true;
+            cajas[contador].listaClientes.push(clienteAux);
+            control = true;
+        }
+
+      } 
     }
 
-    if(menor > caja4.tiempoEspera){
-      menor = caja3.tiempoEspera;
-      cajaDevolver = caja4;
-    }
+    // En el caso de que todas las cajas esten abiertas. y ninguna sea apta.
+    // Recorreremos el array buscando la caja que menos tiempo de espera tiene para añadir al nuevo cliente.
 
-  }
+    for(let i = 0, i <= 3, i++){
+
+    }
+} 
 
   window.onload=function () {
     var objDiv = document.getElementById("pantallaConsola");
     objDiv.scrollTop = objDiv.scrollHeight;
 }
 
-document.getElementById('pantallaConsola').scrollTop = 9999999;
+document.getElementById('pantallaConsola').scrollBot = 9999999;
 
-/*2 5 1 9
-
-menor = 2;
-menor > 5? ->No
-menor > 1? -> si menor = 1;
-menor >9? ->No
-
-
-5 2 9 1
-
-menor =5;
-menor > 2; ->Si menor =2 ;
-menor >1; -> Si menor = 1;
-menor >9? -> no;*/
