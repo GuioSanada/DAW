@@ -10,18 +10,34 @@
 
         <h1>Pokemon</h1>
         <picture class="pokemon1">
-            <source media="(max-width: 799px)" srcset="./img/squirtle320.png">
-            <source media="(min-width: 800px)" srcset="./img/squirtle800.png">
-            <img src="./img/squirtle.png" alt="Pokemon Tipo Agua. 1ª Generacion.">
+            <img srcset="./img/squirtle320.png 320w,
+                ./img/squirtle640.png 480w,
+                ./img/squirtle800.png 800w"
+                sizes="(max-width: 320px) 280px,
+                (max-width: 480px) 440px,
+                800px"
+                src="./img/squirtle320.png" alt="Pokemon tipo Agua">
         </picture>
        
 
         <picture class="pokemon2">
-            <img src="./img/bulbasaur.png">
+            <img srcset="./img/bulbasaure320.png 320w,
+                ./img/bulbasaur640.png 480w,
+                ./img/bulbasaur800.png 800w"
+                sizes="(max-width: 320px) 280px,
+                (max-width: 480px) 440px,
+                800px"
+                src="./img/bulbasaur320.png" alt="Pokemon tipo Agua">
         </picture>
 
         <picture class="pokemon3">
-            <img src="./img/charmander.png">
+            <img srcset="./img/charmander320.png 320w,
+                ./img/charmander640.png 480w,
+                ./img/charmander800.png 800w"
+                sizes="(max-width: 320px) 280px,
+                (max-width: 480px) 440px,
+                800px"
+                src="./img/charmander320.png" alt="Pokemon tipo Agua">
         </picture>
 
     </div>
