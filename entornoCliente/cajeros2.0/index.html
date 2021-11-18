@@ -31,11 +31,10 @@ ENUNCIADO:
 
   <header>
     <h1>SUPERMERCADO</h1>
-    
-
   </header>
 
   <main>
+    <div class="botonClientes" id="botonClientes" onclick="crearCliente(contador)" >Clientes: <span id="contadorClientes"></span></div>
     <div class = "wrapper">
       <section id="zonacajas">
         <div class="caja" id="caja1" onclick="procesoCaja(caja1)"><p>CAJA1. Clientes esperando:<span id="contadorCaja1"></span></p></div>
@@ -56,14 +55,13 @@ ENUNCIADO:
     </div>
     
     <script>
-      caja1 = new caja(1);
-      caja2 = new caja(2);
-      caja3 = new caja(3);
-      caja4 = new caja(4);
+      let caja1 = new caja(1);
+      let caja2 = new caja(2);
+      let caja3 = new caja(3);
+      let caja4 = new caja(4);
       let cajas = new Array(caja1, caja2, caja3, caja4);
-
-  
-  
+      let contador = parseInt(document.getElementById("contadorClientes").innerHTML);
+      document.getElementById("contadorClientes").innerHTML = 0;
     </script>
   </main>
 

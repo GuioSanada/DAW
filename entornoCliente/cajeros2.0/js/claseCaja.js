@@ -16,7 +16,7 @@
         cambiarEstado(){ //Este metodo nos va a cambiar el estado
             if(!this.estado){ // Si esta en false(cerrada)
                 this.estado = true; //la abre
-                document.getElementById("caja"+this.numeroCaja).style.backgroundColor="green"; //cambiamos el color identificativo a verde
+                document.getElementById("caja"+this.numeroCaja).style.backgroundColor="#B8CC7A"; //cambiamos el color identificativo a verde
                 document.getElementById("contadorCaja"+this.numeroCaja).innerHTML = 0; // Al activar la caja mostramos el numero inicial de gente esperando
                 // que sera 0.
                 this.horaApertura = new Date(); //Al abrir la caja, marcamos la hora de apertuda de la caja.
@@ -42,6 +42,16 @@
             document.getElementById("contadorCaja"+this.numeroCaja).innerHTML = contadorAux;
             let tiempoFinal = new Date();
             this.tiempoEspera = Math.round((Math.abs(tiempoFinal - this.horaApertura))/1000);
+            if(this.contadorCola == 4){
+                this.apta = false;
+            }
+            if(this.contadorCola%4 == 0){
+                let tag = document.createElement("span"); //Creamos etiqueta p
+                let text = document.createTextNode(`Tenemos muchos clientes en la caja: ${this.numeroCaja}`); // Texto que pondremos dentro del <p>
+                tag.appendChild(text); //añadimos el texto a la etiqueta p creada
+                let element = document.getElementById("pantallaConsola"); // almacenamos el elemento donde queremos guardar el p con su respectivo texto
+                element.appendChild(tag); // añadimos texto al elemento.
+            }
         }
 }
 
