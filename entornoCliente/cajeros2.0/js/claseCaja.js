@@ -40,6 +40,7 @@
             // El elemento contadorCaja para poder mostrar el numero de personas que estan esperando
             contadorAux = parseInt(contadorAux)+1;
             document.getElementById("contadorCaja"+this.numeroCaja).innerHTML = contadorAux;
+            
             let tiempoFinal = new Date();
             this.tiempoEspera = Math.round((Math.abs(tiempoFinal - this.horaApertura))/1000);
             if(this.contadorCola == 4){
