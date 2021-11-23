@@ -7,8 +7,9 @@
             // cuando la abrimos pasará a true. y cuando tiene 4 clientes pasará de nuevo a false. solo vamos a controlar el flujo de clientes por ella.
             this.horaApertura = null; //Aqui guardaremos la hora a la que se abrió la caja.
             this.horaCierre = null; // Aqui guardaremos la hora a la que se cerro la caja.
-            this.tiempoEspera = null; // Tiempo de espera total que tiene la caja.
+            this.tiempoAbierta = null; // Tiempo que ha estado la caja abierta.
             this.totalFacturado = null;  // Total facturado por todos los clientes que pasan.
+            this.tiempoTotalEspera = 0; // Tiempo de espera total que tiene la caja.
             this.listaClientes = []; // Array de los clientes que entran en la cola de espera.
         }
 
@@ -42,7 +43,7 @@
             document.getElementById("contadorCaja"+this.numeroCaja).innerHTML = contadorAux;
             
             let tiempoFinal = new Date();
-            this.tiempoEspera = Math.round((Math.abs(tiempoFinal - this.horaApertura))/1000);
+            this.tiempoAbierta = Math.round((Math.abs(tiempoFinal - this.horaApertura))/1000);
             if(this.contadorCola == 4){
                 this.apta = false;
             }
