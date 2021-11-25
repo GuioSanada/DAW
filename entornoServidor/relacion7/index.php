@@ -11,6 +11,36 @@
 
     <?php
         require 'database.php';
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+            $nom = $_POST['nick'];
+            $pass =$_POST['pass'];
+
+            //  FETCH_ASSOC
+            $stmt = $dbh -> prepare("SELECT nick, pass FROM usuarios WHERE nick=:nick");
+            //  Especificamos el fetch mode antes de llamar a fetch()
+            $stmt -> setFetchMode(PDO::FETCH_ASSOC);
+            //  Ejecutamos
+            $stmt -> execute(array(':nick' => $nom));
+            $stmt -> execute();
+
+            $row = $stmt -> fetch();
+
+            $pelicula = [$row['nick'], $row["pass"]];
+
+            if(password_verify($pass, $pelicula[1])){
+                session_start();
+                $_SESSION["nick"] = $pelicula[0];
+                header("Location: registro.php");
+            }
+            
+
+
+
+            
+
+
+        }else{ 
     ?>
 
     <main>
@@ -36,6 +66,9 @@
             <a href="registro.php">Registrate</a>
         </section>
     </main>
+    <?php
+    }
+    ?>
     
 </body>
 </html>
