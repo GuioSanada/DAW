@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<ciudades>
+    <ciudad>
+        <nombre>Madrid</nombre>
+        <país continente="Europa">España</país>
+    </ciudad>
+    
+    <ciudad>
+        <nombre>Nueva York</nombre>
+        <país continente="Norte America">EEUU</país>
+    </ciudad>
+    
+    <ciudad>
+        <nombre>Canberra</nombre>
+        <país continente="Oceanía">Australia</país>
+    </ciudad>
+    
+    <ciudad>
+        <nombre>Berlín</nombre>
+        <país continente="Europa">Alemania</país>
+    </ciudad>
+</ciudades>
