@@ -8,7 +8,7 @@
             this.horaApertura = null; //Aqui guardaremos la hora a la que se abrió la caja.
             this.horaCierre = null; // Aqui guardaremos la hora a la que se cerro la caja.
             this.tiempoAbierta = null; // Tiempo que ha estado la caja abierta.
-            this.totalFacturado = null;  // Total facturado por todos los clientes que pasan.
+            this.totalFacturado = 0;  // Total facturado por todos los clientes que pasan.
             this.tiempoTotalEspera = 0; // Tiempo de espera total que tiene la caja.
             this.listaClientes = []; // Array de los clientes que entran en la cola de espera.
         }
@@ -53,6 +53,16 @@
                 tag.appendChild(text); //añadimos el texto a la etiqueta p creada
                 let element = document.getElementById("pantallaConsola"); // almacenamos el elemento donde queremos guardar el p con su respectivo texto
                 element.appendChild(tag); // añadimos texto al elemento.
+            }
+        }
+        disminuirContador(){
+            if(this.contadorCola > 0){ // Si hay gente esperando restamos
+                this.contadorCola--; //Restamos 1 al contador
+                $(`#contadorCaja${this.numeroCaja}`).html(this.contadorCola); // Cambiamos el contenido de la caja
+            }else{ //Si no hay gente esperando. Cerramos caja. 
+                this.estado = false; // cerramos caja
+                this.apta = false; // Al estar la caja cerrada, no es apta para meter nuevos clientes.
+                $(`#contadorCaja${this.numeroCaja}`).css('background-color', '#F2AA61')
             }
         }
 }

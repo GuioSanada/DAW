@@ -71,5 +71,27 @@ function asignarClienteCaja(clienteAux){ // Funcion para asignar un cliente a un
     }    
 } 
 
+function facturar(idCaja, idCliente){ //Funcion con la que vamos a facturar la compra del cliente. 
+  cajas[idCaja].totalFacturado += cajas[idCaja].listaClientes[idCliente]; //Añadimos al atributo TotalFacturado lo que el cliente lleva comprado
+  
+  //Añadimos un mensaje en la pantalla de que el cliente se ha ido.
+  let tag = document.createElement("p"); //Creamos etiqueta p
+  let text = document.createTextNode(`Muchas gracias por su compla cliente numero: ${cajas[idCaja].listaClientes[idCliente]}<BR> La caja ${cajas[idCaja].numeroCaja} ha facturado en total: ${cajas[idCAja].totalFacturado}`); // Texto que pondremos dentro del <p>
+  tag.appendChild(text); //añadimos el texto a la etiqueta p creada
+  let element = document.getElementById("pantallaConsola"); // almacenamos el elemento donde queremos guardar el p con su respectivo texto
+  element.appendChild(tag); // añadimos texto al elemento.
 
 
+  // Procedemos a quitar el cliente del array del 
+  cajas[idCaja].listaClientes.splice(idCliente,1);
+  // Restamos uno al contadorCola que es el atributo que usamos para saber cuanta gente tenemos en la cola de dicha caja
+  cajas[idCaja].contadorCola--;
+  // Procedemos a modificar 
+}
+
+$("#myId").mousedown(function(ev){
+  if(ev.which == 3)
+  {
+        alert("Right mouse button clicked on element with id myId");
+  }
+});
