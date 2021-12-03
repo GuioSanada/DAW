@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frameworks>
+   <framework>
+      <nombre>NET</nombre>
+      <lenguaje>C# y otros</lenguaje>
+      <fundador>Microsoft</fundador>
+   </framework>
+   <framework>
+      <nombre>Zend</nombre>
+      <lenguaje>PHP</lenguaje>
+      <fundador>Zend</fundador>
+   </framework>   
+   <framework>
+      <nombre>Spring</nombre>
+      <lenguaje>Java</lenguaje>
+      <fundador>Pivotal</fundador>
+   </framework>
+   <framework>
+      <nombre>Laravel</nombre>
+      <lenguaje>PHP</lenguaje>
+      <fundador>Taylor Otwell</fundador>
+   </framework>
+</frameworks>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="frameworks">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="framework" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="lenguaje" type="xs:string"/>
+                            <xs:element name="fundador" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element> 
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

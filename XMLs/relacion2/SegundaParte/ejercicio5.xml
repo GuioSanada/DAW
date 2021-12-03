@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventos_historicos>
+   <evento descripcion="Se crea el primer PC.">
+      <fecha>
+         <dia>12</dia>
+         <mes>8</mes>
+         <año>1981</año>
+      </fecha>
+   </evento>
+   <evento descripcion="Nace Google.">
+      <fecha>
+         <dia>4</dia>
+         <mes>9</mes>
+         <año>1998</año>
+      </fecha>
+    </evento>
+   <evento descripcion="Nace Facebook">
+      <fecha>
+         <dia>4</dia>
+         <mes>2</mes>
+         <año>2004</año>
+      </fecha>
+   </evento>
+   <evento descripcion="Facebook compra Whatsapp">
+      <fecha>
+         <dia>19</dia>
+         <mes>2</mes>
+         <año>2014</año>
+      </fecha>
+    </evento>
+</eventos_historicos>
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+                <xs:element name="eventos_historicos" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="evento">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="fecha">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:simpleType name="dia">
+                                                        <xs:restriction base="xs:positiveInteger">
+                                                            <xs:minInclusive value="1"/>
+                                                            <xs:maxExclusive value="31"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+
+                                                    <xs:simpleType name="mes">
+                                                        <xs:restriction base="xs:positiveInteger">
+                                                            <xs:minInclusive value="1"/>
+                                                            <xs:maxExclusive value="12"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>     
+                                
+                                                    <xs:simpleType name="mes">
+                                                        <xs:restriction base="xs:positiveInteger">
+                                                            <xs:minInclusive value="1"/>
+                                                            <xs:maxExclusive value="12"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType> 
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:attribute type="xs:string" name="descripcion" use="optional"/>
+                                    </xs:sequence>
+                                </xs:complexType>        
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+</xs:schema>

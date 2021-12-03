@@ -62,7 +62,7 @@
             }else{ //Si no hay gente esperando. Cerramos caja. 
                 this.estado = false; // cerramos caja
                 this.apta = false; // Al estar la caja cerrada, no es apta para meter nuevos clientes.
-                $(`#contadorCaja${this.numeroCaja}`).css('background-color', '#F2AA61')
+                $(`#contadorCaja${this.numeroCaja}`).css('background-color', '#F2AA61');
             }
         }
 }

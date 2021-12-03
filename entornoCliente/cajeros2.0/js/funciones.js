@@ -80,6 +80,7 @@ function facturar(idCaja, idCliente){ //Funcion con la que vamos a facturar la c
   tag.appendChild(text); //añadimos el texto a la etiqueta p creada
   let element = document.getElementById("pantallaConsola"); // almacenamos el elemento donde queremos guardar el p con su respectivo texto
   element.appendChild(tag); // añadimos texto al elemento.
+ 
 
 
   // Procedemos a quitar el cliente del array del 
