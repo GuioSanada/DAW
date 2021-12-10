@@ -1,0 +1,22 @@
+[
+    {
+       "Nombre y Apellidos" : "Antonio Fernandez",
+       "edad" : 36,
+       "casado" : true
+    },
+    {
+        "Nombre y Apellidos" : "Jorge Profe",
+        "edad" : 26,
+        "casado" : true
+     },
+     {
+        "Nombre y Apellidos" : "Luiza Blanco",
+        "edad" : 20,
+        "casado" : false
+     },
+     {
+        "Nombre y Apellidos" : "Susana",
+        "edad" : 46,
+        "casado" : true
+     }
+]

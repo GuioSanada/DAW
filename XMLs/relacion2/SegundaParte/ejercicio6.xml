@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cine>
+    <pelicula categoria="accion">
+        <titulo idioma="ingles"> Jungla Cristal </titulo>
+        <director> John McTiernan </director>
+        <estreno>1988</estreno>
+        <reparto> Bruce Willis</reparto>
+    </pelicula>
+    <pelicula categoria="comedia">
+        <titulo idioma="ingles"> Con faldas y a lo loco </titulo>
+        <director> Billy Wilder </director>
+        <estreno>1963</estreno>
+        <reparto>Tony Curtis</reparto>
+        <reparto>Jack Lemmon</reparto>
+    </pelicula>
+    <pelicula categoria="superheroes">
+        <titulo idioma="ingles"> Los Vengadores </titulo>
+        <director> Joss Whedon </director>
+        <estreno>2012</estreno>
+        <reparto> Robert Downey Jr</reparto>
+        <reparto> Samuel L Jackson </reparto>
+    </pelicula>
+</cine>
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="cine">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="pelicula">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="titulo">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute type="xs:string" name="idioma"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="director" type="xs:string"/>
+                            <xs:element name="estreno" type="xs:string"/>
+                            <xs:element name="reparto" type="xs:string" minOccurs="0" maxOccurs="2"/>
+                        </xs:sequence>
+                    <xs:attribute type="xs:string" name="categoria"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

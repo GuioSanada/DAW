@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Persona",
+    "description": "Esquema de una persona",
+    "type" : "array",
+    "items" : {
+        "type" : "object",
+        "properties": {
+            "Nombre y Apellidos" :{
+                "description": "Nombre y apellidos de la persona",
+                "type" : "string"
+            },
+            "edad" : {
+                "description": "Edad de la persona",
+                "type" : "number"
+            },
+            "casado" : {
+                "description": "Estado civil de la persona. Solo dos valores Si o no.",
+                "type" : "boolean"
+            }
+        },
+        "required" : [
+            "Nombre y Apellidos",
+            "edad"
+        ]
+        }
+    
+}

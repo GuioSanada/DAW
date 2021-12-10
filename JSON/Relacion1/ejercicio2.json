@@ -1,0 +1,89 @@
+[
+    {
+        "nombre" : "Antonio",
+        "dni" : "11111111A",
+        "direccion" : "Camino a VillaFlora",
+        "telefono" : "650802790",
+        "asignaturas" : {
+            "LC" : {
+                "nombre" : "LC",
+                "calificacion" : 10
+            },
+            "DES" : {
+                "nombre" : "DES",
+                "calificacion" : 10
+            },
+            "DEC" : {
+                "nombre" : "DEC",
+                "calificacion" : 10
+            }
+            
+        }
+    },
+
+    {
+        "nombre" : "Jorge",
+        "dni" : "11111112A",
+        "direccion" : "Torre del Mar",
+        "telefono" : "611111111",
+        "asignaturas" : {
+            "LC" : {
+                "nombre" : "LC",
+                "calificacion" : 10
+            },
+            "DES" : {
+                "nombre" : "DES",
+                "calificacion" : 10
+            },
+            "EIE" : {
+                "nombre" : "EIE",
+                "calificacion" : 10
+            }
+            
+        }
+    },
+
+    {
+        "nombre" : "La Luiza",
+        "dni" : "11111113A",
+        "direccion" : "cordobah",
+        "telefono" : "622222222",
+        "asignaturas" : {
+            "LC" : {
+                "nombre" : "LC",
+                "calificacion" : 9
+            },
+            "DES" : {
+                "nombre" : "DES",
+                "calificacion" : 10
+            },
+            "DEC" : {
+                "nombre" : "DEC",
+                "calificacion" : 8
+            }
+            
+        }
+    },
+
+    {
+        "nombre" : "Ezú",
+        "dni" : "11111114A",
+        "direccion" : "Marbella",
+        "telefono" : "633333333",
+        "asignaturas" : {
+            "DI" : {
+                "nombre" : "DI",
+                "calificacion" : 10
+            },
+            "DES" : {
+                "nombre" : "DES",
+                "calificacion" : 10
+            },
+            "DEC" : {
+                "nombre" : "DEC",
+                "calificacion" : 3
+            }
+            
+        }
+    }
+]

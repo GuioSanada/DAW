@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "animales",
+    "description": "Schema de animales",
+    "type": "object",
+    "properties": {
+        "nombre" : {"description" : "Nombre del animal", "type" : "string"},
+        "raza" : {"description" : "Raza del animal", "type" : "string"},
+        "nivelHambre" : {"description": "Nivel de hambre del animal", "type" : "number"},
+        "nivelSueño" : {"description": "Nivel de sueño del animal", "type" : "number"},
+        
+        "muestra Array" : {
+            "description": "Ni idea", 
+            "type" : "array", 
+            "items" : [
+                {
+                    "type": "object",
+                    "properties": {
+                        "etiqel11" :{
+                            "type" : "string",
+                            "description": "Descripcion del valor del primer atributo del objeto"
+                        },
+                        "etiqel12" : {
+                            "type" : "number",
+                            "description": "Descripcion del valor del segundo atributo del objeto"
+                        }
+                    },
+                    "required": [
+                        "etiqel11",
+                        "etiqel12"
+                    ]
+                },
+                {
+                    "type" : "object",
+                    "properties" : {
+                        "etiqel21" :{
+                            "type" : "string",
+                            "description": "Descripcion del valor del primer atributo del objeto"
+                        },
+                        "etiqel22" : {
+                            "type" : "number",
+                            "description": "Descripcion del valor del segundo atributo del objeto"
+                        }
+                    },
+                    "required": [
+                        "etiqel21",
+                        "etiqel22"
+                    ]
+                }
+            ]
+        }
+        
+    }
+    
+}
+   

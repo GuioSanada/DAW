@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Alumnos",
+    "description": "Schema de alumnos",
+    "type": "array",
+    "items": {
+      "description": "listado de alumnos con sus asignaturas",
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "description": "El nombre del alumno/a"
+        },
+        "dni": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "El dni del alumno/a con o sin letra"
+        },
+          "direccion": {
+          "type": "string",
+          "description": "Direccion del alumno/a"
+        },
+        "telefono":{
+            "patternProperties": {
+                "[0-9]{9}":{
+                    "description": "Numero de telefono de los alumnos/as"
+                }
+            },
+            "type": "string"
+        },
+        "asignaturas": {
+          "type": "object",
+          "description": "cada una de las asignaturas de los alumnos/as",
+          "patternProperties": {
+            "[A-Z]{2}": {
+              "description": "cada una de las asignaturas",
+              "type": "object",
+              "required": [
+                "nombre"
+              ],
+              "properties": {
+                "nombre": {
+                  "type": "string"
+                },
+                "caliﬁcacion": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "nombre",
+        "dni",
+        "asignaturas"
+      ]
+    },
+    "uniqueItems": true
+  }
+   
