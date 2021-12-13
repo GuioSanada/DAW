@@ -20,6 +20,8 @@
                 <input type="submit" value="Cerrar sesión"/>
             </form>
             <?php
+        }else{
+            header("Location: index.php");
         }
         
         

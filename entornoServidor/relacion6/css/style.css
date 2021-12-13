@@ -9,7 +9,7 @@ body{
     background-color: #E8E8DB;
     color: #494846;
 }
-h1{
+h1, h2{
     text-transform: uppercase;
     margin-bottom: 2rem;
 }

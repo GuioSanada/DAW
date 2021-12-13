@@ -1,13 +1,27 @@
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Document</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./js/javascript.js"></script>
-        <link rel="stylesheet" href="./css/style.css"/>        
-    </head>
+<head>
 
-    <body>
-        <div id="mensaje"></div>
+    <title>Ejemplo JQuery</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<body>
+    Escribe aquí: <input type="text" />
+    <p>Verás el texto, pero debajo el código de tecla usada cada vez.</p>
+    <div id="mostrar"></div>
+    <script>
+    let contador = 0;
+
+    $(document).ready(function(){
+      $("input").keydown(function(event){ 
+        $("#mostrar").html("Key: " + event.which);
+        if(event.which==53){
+            $("#mostrar").html("Has presionado la tecla 5. En total la has pulsado: " + contador);
+            contador++;     
+        }
+      }); });
+
+    </script>
     </body>
-
+    
 </html>

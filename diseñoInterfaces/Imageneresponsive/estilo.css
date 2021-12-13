@@ -1,0 +1,9 @@
+* {
+  background-color: rgb(233, 211, 211);
+}
+
+picture {
+  display: block;
+  width: 1200px;
+  height: auto;
+}

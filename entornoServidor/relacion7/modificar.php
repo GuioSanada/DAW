@@ -8,8 +8,8 @@
     <body> 
         <?php
             require 'database.php';
-
             session_start();
+
             if(isset($_SESSION["nick"])){
                 echo "<h1>Bienvenido ".$_SESSION["nick"]."</h1>";
                 if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST["tipoSubmit"])){
@@ -22,6 +22,8 @@
                     <input type="submit" value="Cerrar sesión"/>
                 </form>
                 <?php   
+            }else{
+                header("Location: index.php");
             }
             if(isset($_POST['modificar'])){
                 if($_SERVER['REQUEST_METHOD']=='POST' && !isset($_POST["tipoSubmit"])){

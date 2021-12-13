@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+autor: Jesús Guirao Melero
+fecha: Noviembre 2021
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilo.css" rel="stylesheet" />
+    <title>Imagenes responsive</title>
+</head>
+
+<body>
+
+
+
+
+    <picture>
+        <source srcset="imagenesconpicture/imagen2.webp" media="(min-width: 1500px)">
+        <source srcset="imagenesconpicture/imagen2.jpg" media="(min-width: 1000px)">
+        <source srcset="imagenesconpicture/imagen2800.webp" media="(min-width: 800px)">
+        <source srcset="imagenesconpicture/imagen2400.jpg" media="(min-width: 400px)">
+        <source srcset="imagenesconpicture/imagen2300.webp" media="(min-width: 300px)">
+
+
+        <img id="fotoInferior" src="imagen2.jpg" alt="foto jesus" />
+    </picture>
+
+
+
+
+</body>
+
+</html>

@@ -1,66 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Imagenes Escalables</title>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes escalables</title>
+    <link href="./css/style.css" rel="stylesheet" />
 </head>
 <body>
 
+    <!-- Primera imagen -->
 
-    <div class="images-container">
-        <picture>
-            <source media="(orientation: portrait) and (min-width: 800px)"
-                    srcset="./images/"
-                    type="image/png"
-            />
+    <img alt="Bulbasaur" src="./img/bulbi/bulbasaur.webp" class="responsive">
 
-            <source media="(orientation: landscape) and (min-width: 1920px)"
-                    srcset=""
-
-
-
-
-        </picture>
-    </div>
-
-
-
-
-    <div class="container">
-
-        <h1>Pokemon</h1>
-        <picture class="pokemon1">
-            <img srcset="./img/squirtle320.png 320w,
-                ./img/squirtle640.png 480w,
-                ./img/squirtle800.png 800w"
-                sizes="(max-width: 320px) 280px,
-                (max-width: 480px) 440px,
-                800px"
-                src="./img/squirtle320.png" alt="Pokemon tipo Agua">
-        </picture>
-       
-
-        <picture class="pokemon2">
-            <img srcset="./img/bulbasaure320.png 320w,
-                ./img/bulbasaur640.png 480w,
-                ./img/bulbasaur800.png 800w"
-                sizes="(max-width: 320px) 280px,
-                (max-width: 480px) 440px,
-                800px"
-                src="./img/bulbasaur320.png" alt="Pokemon tipo Agua">
-        </picture>
-
-        <picture class="pokemon3">
-            <img srcset="./img/charmander320.png 320w,
-                ./img/charmander640.png 480w,
-                ./img/charmander800.png 800w"
-                sizes="(max-width: 320px) 280px,
-                (max-width: 480px) 440px,
-                800px"
-                src="./img/charmander320.png" alt="Pokemon tipo Agua">
-        </picture>
-
-    </div>
 
 </body>
 </html>

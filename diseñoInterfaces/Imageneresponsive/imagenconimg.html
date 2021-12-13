@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+autor: Jesús Guirao Melero
+fecha: Noviembre 2021
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilo.css" rel="stylesheet" />
+    <title>Imagenes responsive</title>
+</head>
+
+<body>
+
+
+
+
+    <img srcset="imagenesconimg/imagen320w.jpeg 320w,
+                imagenesconimg/imagen320wenheic.heic 320w,
+                imagenesconimg/imagen480w.jpg 480w,
+                imagenesconimg/imagen480wheic.heic 480w,
+                imagenesconimg/imagen800w.jpg 800w,
+                imagenesconimg/imagen800wheic.heic 800w" sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px" src="imagen800w.jpg" alt="Esto le funciona a Jesús">
+
+
+</body>
+
+</html>

@@ -2,7 +2,7 @@
     $server = 'localhost';
     $user = 'root';
     $password = '';
-    $dbname = 'relacion7';
+    $dbname = 'peliculas';
 
     try {
         $dsn = "mysql:host=$server;dbname=$dbname";

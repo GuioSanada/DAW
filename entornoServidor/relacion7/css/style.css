@@ -1,49 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 *{
     margin: 0;
     padding: 0;
-
 }
+
 body{
-    background-color: #F2F2F2;
+    font-family: 'Oswald', sans-serif;
+    background-color: #E8E8DB;
+    color: #494846;
 }
-section{
-    width: 80%;
-    padding: 1.5rem;
-    background-color: #6593A6;
+h1, h2{
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.container{
     margin: 10rem auto;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
     align-items: center;
+    align-content: center;
+    gap: 0.5rem;
 
 }
+table{
+    width: 75%;
 
-form{
-    color: #F2F2F2;
-    display: flex;
-    row-gap: 0.25rem;
-    column-gap: 0.25rem;
-    flex-direction: column;
-    justify-content: center;
+}
+.cabeceraTabla{
+    background-color: #494846;
+    color: #E8E8DB;
     
 }
-
-label{
-    width: 3rem;
+.boton{
+    color: #494846;
+    margin-right: 1rem;
 }
 
-h1{
-    color: #F2F2F2;
-    margin-bottom: 2.5rem;
+.submit{
+    background-color: #494846;
+    color: #E8E8DB;
+    border-radius: 5px;
+    border: 1px solid #494846;
 }
-
-a{
-    color: #F2F2F2;
-    text-decoration: none;
-    
-}
-
-
-
-

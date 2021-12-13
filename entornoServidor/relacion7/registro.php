@@ -5,17 +5,25 @@
     </head>
     <body>
         <?php
+            session_start();
+            if(isset($_SESSION['nick'])){
+                header("Location: listadoPeliculas.php");
+            }
             require 'database.php';
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
+               
                 $nom = $_POST['nick'];
                 $pass = $_POST['pass'];
                 $pass = password_hash($pass, PASSWORD_DEFAULT);
 
-                $stmt = $dbh -> prepare("INSERT INTO usuarios VALUES (:nick, :pass)");
-                if($stmt -> execute(array(':nick'=>$nom, ':pass'=>$pass))){
-                    header("Location: index.php");
-                }else{
+                $stmt = $dbh -> prepare("INSERT INTO usuarios (nick, pass) VALUES (:nick, :pass)");
+                try {
+                    if($stmt -> execute(array(':nick'=>$nom, ':pass'=>$pass))){
+                        header("Location: index.php");
+                    }
+                } catch (Exception  $e) {
                     header("Location: registro.php");
+                    
                 }
 
 
@@ -23,6 +31,7 @@
         ?>
 
         <main>
+            
             <section>
                 <h1>Ejercicio sesiones</h1>
                 <form method="post" action="<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]);?>">
