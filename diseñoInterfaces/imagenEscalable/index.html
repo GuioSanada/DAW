@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes escalables</title>
+    <link href="./css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Primera imagen -->
+
+    <img alt="Bulbasaur" src="./img/bulbi/bulbasaur.webp" class="responsive">
+
+    <img srcset="img/charmi/charmander320.jpg 320w,
+                img/charmi/charmander320.heic 320w,
+                img/charmi/charmander480.jpg 480w,
+                img/charmi/charmander480.heic 480w,
+                img/charmi/charmander800.jpg 800w,
+                img/charmi/charmander800.heic 800w" sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px" src="img/charmi/charmander800.jpg" alt="Charmander"/>
+
+    <img alt="squirtle" src="./img/squirti/squirtle.webp" class="squirtleResponsive">
+
+    <picture>
+        <source srcset="img/snorlix/snorlax.webp" media="(min-width: 1500px)">
+        <source srcset="img/snorlix/snorlax.png" media="(min-width: 1000px)">
+        <source srcset="img/snorlix/snorlax800.webp" media="(min-width: 800px)">
+        <source srcset="img/snorlix/snorlax400.webp" media="(min-width: 400px)">
+        <source srcset="img/snorlix/snorlax300.webp" media="(min-width: 300px)">
+
+
+        <img id="imagenSnorlax" src="img/snorlix/snorlax.png" alt="Snorlax" />
+    </picture>
+
+</body>
+</html>

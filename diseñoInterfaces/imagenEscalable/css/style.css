@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Mohave&family=Oxygen:wght@300;400;700&family=Playfair+Display:ital,wght@1,500&family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-color:#F2F2F1 ;
+    font-family: 'Playfair Display', serif;
+}
+
+/****************** IMAGEN CON ORIENTACION ***********************/
+
+@media screen and (orientation: portrait) {
+    .responsive {
+      width: 100%;
+      height: auto;
+      max-width: 50%;
+    }
+    
+  }
+  
+  @media screen and (orientation: landscape) {
+    .responsive {
+      width: auto;
+      height: 100%;
+      max-width: 50%;
+    }
+    
+  } 
+
+  /****************** IMAGEN CON MEDIA ***********************/
+
+  @media screen and (max-width: 1024px) {
+    .squirtleResponsive {
+      width: 200px;
+    }
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .squirtleResponsive {
+      width: 300px;
+    }
+  }
+  @media screen and (min-width: 1081px) {
+    .squirtleResponsive {
+      width: 400px;
+    }
+  }
+  .squirtleResponsive {
+    height: auto;
+  }
+
+
+  /******************* IMAGEN CON PICTURE **********************/
+  picture {
+    display: block;
+    width: 1200px;
+    height: auto;
+  }
