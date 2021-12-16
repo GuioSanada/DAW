@@ -22,7 +22,7 @@
 
     //Funcion para validar nombre y autor
     function validarNombre($name){
-        $pattern = '^[a-zA-Z]+$^';
+        $pattern = '^[a-zA-Z0-9]+$^';
         if(!preg_match($pattern, $name))
             return false;
         else
