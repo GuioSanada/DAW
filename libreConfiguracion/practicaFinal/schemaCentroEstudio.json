@@ -1,0 +1,129 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    
+    "type": "object",
+    "description": "Objeto que representa el centro",
+    "properties": {
+        "alumno": {
+
+            "type": "array",
+            "description": "Array que almacena alumnos",
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "description": "Objeto alumno",
+                        "required": [
+                            "@curso",
+                            "nombre",
+                            "apellidos",
+                            "direccion"
+                        ],
+                        "properties": {
+                            "@curso": {
+                                "type": "string",
+                                "description": "Atributo de curso."
+                            },
+                            "nombre": {
+                                "type": "string",
+                                "description": "Nombre Alumno."
+                            },
+                            "apellidos": {
+                                "type": "string",
+                                "description": "Apellidos alumno."
+                            },
+                            "direccion": {
+                                "type": "object",
+                                "required": [
+                                    "@localidad",
+                                    "tipoVia",
+                                    "nombreVia",
+                                    "numero",
+                                    "puerta"
+                                ],
+                                "properties": {
+                                    "@localidad": {
+                                        "type": "string",
+                                        "description": "Atributo que indica la localidad del alumno."
+                                    },
+                                    "tipoVia": {
+                                        "type": "string",
+                                        "description": "String tipo de via domicilio."
+                                    },
+                                    "nombreVia": {
+                                        "type": "string",
+                                        "description": "String nombre via domicilio."
+                                    },
+                                    "numero": {
+                                        "type": "string",
+                                        "description": "String numero domicilio."
+                                    },
+                                    "puerta": {
+                                        "type": "string",
+                                        "description": "String Puerta/escalera del domicilio."
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "profesor": {
+            "type": "array",
+            "description": "Array que contiene los profesores del centro",
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "description": "Objeto de profesor.",
+                        "required": [
+                            "@nombre",
+                            "asignatura"
+                        ],
+                        "properties": {
+                            "@nombre": {
+                                "type": "string",
+                                "description": "Propiedad que indica el nombre del profesor."
+                            },
+                            "asignatura": {
+                                "type": "array",
+                                "description": "Array que contiene las asignaturas que imparte el profesor.",
+                                "additionalItems": true,
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "description": "Objeto Asignatura.",
+                                            "required": [
+                                                "@curso",
+                                                "#text"
+                                            ],
+                                            "properties": {
+                                                "@curso": {
+                                                    "type": "string",
+                                                    "description": "Propiedad. Curso donde imparte la materia."
+                                                },
+                                                "#text": {
+                                                    "type": "string",
+                                                    "description": "Materia que imparte."
+                                                }
+                                            },
+                                            "additionalProperties": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

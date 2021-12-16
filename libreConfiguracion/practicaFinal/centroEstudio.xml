@@ -1,0 +1,79 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<cenec>
+    <alumno curso="2ºDaw">
+        <nombre>Antonio</nombre>
+        <apellidos>Fernandez Campos</apellidos>
+        <direccion localidad="Torremolinos">
+            <tipoVia>Calle</tipoVia>
+            <nombreVia>Camino a Villaflora</nombreVia>
+            <numero>2</numero>
+            <puerta>Bajo11</puerta>
+        </direccion>
+    </alumno>
+    <alumno curso="2ºDAW">
+        <nombre>Fulanito</nombre>
+        <apellidos>De Tal</apellidos>
+        <direccion localidad="Malaga">
+            <tipoVia>Calle</tipoVia>
+            <nombreVia>De la piruleta</nombreVia>
+            <numero>2</numero>
+            <puerta>Bajo11</puerta>
+        </direccion>
+    </alumno>
+
+    <profesor nombre="Jorge">
+        <asignatura curso="2ºDAW">Libre Configuracion</asignatura>
+        <asignatura curso="1ºDAM">SGBD</asignatura>
+    </profesor>
+
+    <profesor nombre="Laura">
+        <asignatura curso="2ºDAW">BI2</asignatura>
+        <asignatura curso="1ºDAM">BI</asignatura>
+    </profesor>
+</cenec>
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="cenec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="alumno" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="nombre"/>
+              <xs:element type="xs:string" name="apellidos"/>
+              <xs:element name="direccion">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="tipoVia"/>
+                    <xs:element type="xs:string" name="nombreVia"/>
+                    <xs:element type="xs:byte" name="numero"/>
+                    <xs:element type="xs:string" name="puerta"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="localidad"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="curso"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="profesor" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="asignatura" maxOccurs="3" minOccurs="1">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="curso" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="nombre"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

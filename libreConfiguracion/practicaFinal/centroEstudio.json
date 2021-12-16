@@ -1,0 +1,56 @@
+{
+    "alumno": [
+       {
+          "@curso": "2ºDaw",
+          "nombre": "Antonio",
+          "apellidos": "Fernandez Campos",
+          "direccion": {
+             "@localidad": "Torremolinos",
+             "tipoVia": "Calle",
+             "nombreVia": "Camino a Villaflora",
+             "numero": "2",
+             "puerta": "Bajo11"
+          }
+       },
+       {
+          "@curso": "2ºDAW",
+          "nombre": "Fulanito",
+          "apellidos": "De Tal",
+          "direccion": {
+             "@localidad": "Malaga",
+             "tipoVia": "Calle",
+             "nombreVia": "De la piruleta",
+             "numero": "2",
+             "puerta": "Bajo11"
+          }
+       }
+    ],
+    "profesor": [
+       {
+          "@nombre": "Jorge",
+          "asignatura": [
+             {
+                "@curso": "2ºDAW",
+                "#text": "Libre Configuracion"
+             },
+             {
+                "@curso": "1ºDAM",
+                "#text": "SGBD"
+             }
+          ]
+       },
+       {
+          "@nombre": "Laura",
+          "asignatura": [
+             {
+                "@curso": "2ºDAW",
+                "#text": "BI2"
+             },
+             {
+                "@curso": "1ºDAM",
+                "#text": "BI"
+             }
+          ]
+       }
+    ]
+ }
