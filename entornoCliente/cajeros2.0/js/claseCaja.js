@@ -65,5 +65,8 @@
                 $(`#contadorCaja${this.numeroCaja}`).css('background-color', '#F2AA61');
             }
         }
+
+        
+          
 }
 
