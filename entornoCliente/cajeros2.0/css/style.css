@@ -182,6 +182,10 @@ the website, in dark theme
   overflow: hidden; /*For animation*/
 }
 
+.flexbox{
+  display: flexbox;
+  flex-direction: column;
+}
 
 /*=============== HEADER ===============*/
 .header{
@@ -440,7 +444,7 @@ the website, in dark theme
   margin-top: .15rem;
 }
 
-/*=============== STEPS ===============*/
+/*=============== CAJAS ===============*/
 #botonClientes{
   width: 12rem;
 }
@@ -489,6 +493,30 @@ the website, in dark theme
   transform: translateY(-.25rem);
 }
 
+/*=============== PANTALLA REGEX ===============*/
+ #zonaPantalla{
+  display: flexbox;
+  flex-direction: column;
+ }
+ .pantallaConsola{
+   display: flex;
+   flex-direction: column;
+   row-gap: var(--mb-1);
+   justify-content: center;
+   align-items: center;
+
+ }
+#pantallaConsola{
+  background-color: #FFF;
+  height: 15rem;
+  width: 95%;
+}
+#pantallaConsola p{
+  color: #BDCC94;
+}
+#pantallaConsola span{
+  color: #FF8C64;
+}
 
 /*=============== CONTACT ===============*/
 .contact__container{

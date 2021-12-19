@@ -86,15 +86,19 @@ function asignarClienteCaja(clienteAux){ // Funcion para asignar un cliente a un
 function facturar(idCaja, idCliente){ //Funcion con la que vamos a facturar la compra del cliente.
     cajas[idCaja].totalFacturado += cajas[idCaja].listaClientes[cajas[idCaja].listaClientes.length-1].totalPagar; //Añadimos al atributo TotalFacturado lo que el cliente lleva comprado
     
-    //Añadimos un mensaje en la pantalla de que el cliente se ha ido.
+    //Añadimos un mensaje en la pantalla de que el cliente se ha ido, y de lo que ha pagado
     let tag = document.createElement("p"); //Creamos etiqueta p
     let text = document.createTextNode(`Muchas gracias por su compra cliente numero: ${idCliente}. La caja ${cajas[idCaja].numeroCaja} ha facturado en total: ${cajas[idCaja].totalFacturado}`); // Texto que pondremos dentro del <p>
     tag.appendChild(text); //añadimos el texto a la etiqueta p creada
     let element = document.getElementById("pantallaConsola"); // almacenamos el elemento donde queremos guardar el p con su respectivo texto
     element.appendChild(tag); // añadimos texto al elemento.
+
+    //Mostramos en el div el total facurado
+    let facturaAuxiliar =parseFloat(document.getElementById(`facturacionCaja${cajas[idCaja].numeroCaja}`).innerHTML);
+    facturaAuxiliar += cajas[idCaja].totalFacturado; 
+    document.getElementById(`facturacionCaja${cajas[idCaja].numeroCaja}`).innerHTML = facturaAuxiliar;
   
     // Procedemos a modificar el valor del contador en el DIV del bton caja. Y a disminuir el contador
-    
     if(cajas[idCaja].contadorCola > 0){ // Si hay gente esperando restamos
       cajas[idCaja].contadorCola--; //Restamos 1 al contador
       let spanContador = document.getElementById("contadorCaja"+cajas[idCaja].numeroCaja).innerHTML;

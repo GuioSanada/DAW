@@ -18,10 +18,10 @@
             if(!this.estado){ // Si esta en false(cerrada)
                 this.estado = true; //la abre
                 document.getElementById("caja"+this.numeroCaja).style.backgroundColor="#B8CC7A"; //cambiamos el color identificativo a verde
-                document.getElementById("contadorCaja"+this.numeroCaja).innerHTML = 0; // Al activar la caja mostramos el numero inicial de gente esperando
-                // que sera 0.
+
                 this.horaApertura = new Date(); //Al abrir la caja, marcamos la hora de apertuda de la caja.
                 this.apta = true;
+
 
                 let tag = document.createElement("p"); //Creamos etiqueta p
                 let text = document.createTextNode(`Se ha abierto la caja: ${this.numeroCaja}`); // Texto que pondremos dentro del <p>
@@ -44,6 +44,7 @@
             
             let tiempoFinal = new Date();
             this.tiempoAbierta = Math.round((Math.abs(tiempoFinal - this.horaApertura))/1000);
+
             if(this.contadorCola == 4){
                 this.apta = false;
             }
