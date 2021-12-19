@@ -186,9 +186,9 @@
             </h2>
             <div class="steps__container  pantallaConsola">
                 <div id="pantallaConsola"></div>
-                <form>
-                  <input type="text" name="enter" id="enter" />
-                  <input type="button" name="enviar" value="Enviar" id="enviar" />
+                <form onsubmit="return false" id="form">
+                  <input type="text" name="comandoConsola" id="comandoConsola" />
+                  <input type="button" name="enviar" value="Enviar" id="enviar" onclick="comandoConsolas()"/>
                 </form>
             </div>
         </div>

@@ -114,10 +114,40 @@ function facturar(idCaja, idCliente){ //Funcion con la que vamos a facturar la c
     //cajas[idCaja].listaClientes.splice(idCliente,1);
 
     
+}
+
+const form = document.getElementById("form");
+form.addEventListener('submit',)
+
+function comandoConsolas() {
+  let totalFacturado = 0;
+  let comando = document.getElementById("comandoConsola").value;
+  let arrayComando = comando.split(" ");
+  switch(arrayComando[0]){
+    case 'totalFacturado':
+      totalFacturado += parseFloat(document.getElementById("facturacionCaja1").innerHTML);
+      totalFacturado += parseFloat(document.getElementById("facturacionCaja2").innerHTML);
+      totalFacturado += parseFloat(document.getElementById("facturacionCaja3").innerHTML);
+      totalFacturado += parseFloat(document.getElementById("facturacionCaja4").innerHTML);
+
+      let tag = document.createElement("p"); //Creamos etiqueta p
+      let text = document.createTextNode(`El total que ha facturado el supermercado hoy es: ${totalFacturado}`); // Texto que pondremos dentro del <p>
+      tag.appendChild(text); //añadimos el texto a la etiqueta p creada
+      let element = document.getElementById("pantallaConsola"); // almacenamos el elemento donde queremos guardar el p con su respectivo texto
+      element.appendChild(tag); // añadimos texto al elemento.
+      break;
+      
+    default:
+      alert("default");
+      let tag2 = document.createElement("span"); //Creamos etiqueta p
+      let text2 = document.createTextNode(`No se encuentra el siguiente comando: ${comando}`); // Texto que pondremos dentro del <p>
+      tag2.appendChild(text2); //añadimos el texto a la etiqueta p creada
+      let element2 = document.getElementById("pantallaConsola"); // almacenamos el elemento donde queremos guardar el p con su respectivo texto
+      element2.appendChild(tag2); // añadimos texto al elemento.
+      break;
+
   }
-
-
-
+}
 
 
 // $("#myId").mousedown(function(ev){

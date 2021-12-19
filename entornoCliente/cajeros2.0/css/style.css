@@ -510,6 +510,7 @@ the website, in dark theme
   background-color: #FFF;
   height: 15rem;
   width: 95%;
+  overflow: scroll;
 }
 #pantallaConsola p{
   color: #BDCC94;
