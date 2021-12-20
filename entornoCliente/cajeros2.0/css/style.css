@@ -342,7 +342,7 @@ the website, in dark theme
   font-size: var(--smaller-font-size);
   color: var(--first-color);
   position: relative;
-  transform: rotate(90deg);
+  transform: rotate(90deg); /*Gira el texto 90º conseguimos que mire hacia abajo*/
 }
 
 .home__social-follow::after{
