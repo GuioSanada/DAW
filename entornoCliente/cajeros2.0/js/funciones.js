@@ -138,7 +138,6 @@ function comandoConsolas() {
       break;
       
     default:
-      alert("default");
       let tag2 = document.createElement("span"); //Creamos etiqueta p
       let text2 = document.createTextNode(`No se encuentra el siguiente comando: ${comando}`); // Texto que pondremos dentro del <p>
       tag2.appendChild(text2); //añadimos el texto a la etiqueta p creada
