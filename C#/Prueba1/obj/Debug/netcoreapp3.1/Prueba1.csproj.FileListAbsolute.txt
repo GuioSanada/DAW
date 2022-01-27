@@ -1,0 +1,14 @@
+C:\xampp\htdocs\DAW\C#\Prueba1\bin\Debug\netcoreapp3.1\Prueba1.exe
+C:\xampp\htdocs\DAW\C#\Prueba1\bin\Debug\netcoreapp3.1\Prueba1.deps.json
+C:\xampp\htdocs\DAW\C#\Prueba1\bin\Debug\netcoreapp3.1\Prueba1.runtimeconfig.json
+C:\xampp\htdocs\DAW\C#\Prueba1\bin\Debug\netcoreapp3.1\Prueba1.runtimeconfig.dev.json
+C:\xampp\htdocs\DAW\C#\Prueba1\bin\Debug\netcoreapp3.1\Prueba1.dll
+C:\xampp\htdocs\DAW\C#\Prueba1\bin\Debug\netcoreapp3.1\Prueba1.pdb
+C:\xampp\htdocs\DAW\C#\Prueba1\obj\Debug\netcoreapp3.1\Prueba1.csproj.AssemblyReference.cache
+C:\xampp\htdocs\DAW\C#\Prueba1\obj\Debug\netcoreapp3.1\Prueba1.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\DAW\C#\Prueba1\obj\Debug\netcoreapp3.1\Prueba1.AssemblyInfoInputs.cache
+C:\xampp\htdocs\DAW\C#\Prueba1\obj\Debug\netcoreapp3.1\Prueba1.AssemblyInfo.cs
+C:\xampp\htdocs\DAW\C#\Prueba1\obj\Debug\netcoreapp3.1\Prueba1.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\DAW\C#\Prueba1\obj\Debug\netcoreapp3.1\Prueba1.dll
+C:\xampp\htdocs\DAW\C#\Prueba1\obj\Debug\netcoreapp3.1\Prueba1.pdb
+C:\xampp\htdocs\DAW\C#\Prueba1\obj\Debug\netcoreapp3.1\Prueba1.genruntimeconfig.cache
