@@ -1,0 +1,14 @@
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\bin\Debug\netcoreapp3.1\PracticaIntroduccion.exe
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\bin\Debug\netcoreapp3.1\PracticaIntroduccion.deps.json
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\bin\Debug\netcoreapp3.1\PracticaIntroduccion.runtimeconfig.json
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\bin\Debug\netcoreapp3.1\PracticaIntroduccion.runtimeconfig.dev.json
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\bin\Debug\netcoreapp3.1\PracticaIntroduccion.dll
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\bin\Debug\netcoreapp3.1\PracticaIntroduccion.pdb
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\obj\Debug\netcoreapp3.1\PracticaIntroduccion.csproj.AssemblyReference.cache
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\obj\Debug\netcoreapp3.1\PracticaIntroduccion.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\obj\Debug\netcoreapp3.1\PracticaIntroduccion.AssemblyInfoInputs.cache
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\obj\Debug\netcoreapp3.1\PracticaIntroduccion.AssemblyInfo.cs
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\obj\Debug\netcoreapp3.1\PracticaIntroduccion.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\obj\Debug\netcoreapp3.1\PracticaIntroduccion.dll
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\obj\Debug\netcoreapp3.1\PracticaIntroduccion.pdb
+C:\xampp\htdocs\DAW\C#\PracticaIntroduccion\obj\Debug\netcoreapp3.1\PracticaIntroduccion.genruntimeconfig.cache

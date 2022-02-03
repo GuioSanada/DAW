@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - appWebPrueba</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/appWebPrueba.styles.css" asp-append-version="true" />
+</head>
+<body>
+    @{
+        var day = DateTime.Now.Day;
+        var dayString = DateTime.Now.DayOfWeek.ToString();
+        var month = DateTime.Now.ToString("MMMM");
+        var year = DateTime.Now.Year;
+        var hour = DateTime.Now.Hour;
+        var minutes = DateTime.Now.Minute;
+        var stateOfDay = ""; 
+
+        switch (dayString)
+        {
+            case "Monday":
+                dayString = "Lunes";
+                break;
+            case "Tuesday":
+                dayString = "Martes";
+                break;
+            case "Wednesday":
+                dayString = "Miercoles";
+                break;
+            case "Thursday":
+                dayString = "Jueves";
+                break;
+            case "Friday":
+                dayString = "Viernes";
+                break;
+            case "Saturday":
+                dayString = "Sabado";
+                break;
+            case "Sunday":
+                dayString = "Domingo";
+                break;
+        };
+
+        if(hour >= 6 && hour < 12)
+        {
+            stateOfDay = "mañana";
+        }else if(hour >=12 && hour < 14)
+        {
+            stateOfDay = "medio dia";
+        }else if(hour >=14 && hour < 20)
+        {
+            stateOfDay = "tarde";
+        }else if(hour >= 00 && hour < 6)
+        {
+            stateOfDay = "madrugada";
+        }
+        else
+        {
+            stateOfDay = "noche";
+        }
+
+    }
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <!-- EJERCICIO -->
+                    <h1> Hoy es @dayString dia @day de @month de @year y son las @hour:@minutes de la @stateOfDay </h1>
+                <!-- FIN DE EJERCICIO -->
+                <a class="navbar-brand" asp-area="" asp-page="/Index">appWebPrueba</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - appWebPrueba - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

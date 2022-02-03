@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    
+
+    @{
+        // APARTADO 1 CREAMOS 3 VIDEOJUEGOS
+        Videojuego pokemon = new Videojuego("Pokemon", 59.99, Videojuego.Platform.Switch, Videojuego.Pegi.PEGI3);
+        Videojuego ff7 = new Videojuego("FF7", 69.99, Videojuego.Platform.PS5, Videojuego.Pegi.PEGI13);
+        Videojuego eldenRing = new Videojuego("Elden Ring", 109.99, Videojuego.Platform.Xbox, Videojuego.Pegi.PEGI18);
+
+        // CREAMOS LISTA
+        List<Videojuego> videojuegos = new List<Videojuego>();
+
+        // AÑADIMOS VIDEOJUEGOS A LA LISTA
+        videojuegos.Add(ff7);
+        videojuegos.Add(pokemon);
+        videojuegos.Add(eldenRing);
+
+        
+        
+    }
+    <h1>@DateTime.Now</h1>
+    <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Plataforma</th>
+                <th>PEGI</th>
+            </tr>
+        
+        @foreach(Videojuego videojuego in videojuegos)
+        {
+            <tr>
+                <td>@videojuego.Name</td>
+                <td>@videojuego.Price</td>
+                <td>@videojuego.PlatformString</td>
+                <td>@videojuego.PegiString</td>
+            </tr>
+        }
+        </table>
+</div>
