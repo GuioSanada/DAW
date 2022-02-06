@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Jugador;
+use DB;
 
-
-class PlayerController extends Controller
+class filmsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        $players = Jugador::all();
-        return view('players', ['players'=>$players]);
+        //
     }
 
     /**

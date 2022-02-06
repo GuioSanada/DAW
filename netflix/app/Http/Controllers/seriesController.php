@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Serie;
+use DB;
 
-class TeamController extends Controller
+class seriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,11 @@ class TeamController extends Controller
     public function index()
     {
         //
-        $teams = Equipo::all();
-        return view('teams', ['teams'=>$teams]);
+        //$series = Serie::all();
+        $series = DB::table('series')
+                    -> orderby('rating', 'desc') 
+                    -> get();
+        return view('series/index', ['series' => $series]);
     }
 
     /**
@@ -26,6 +31,7 @@ class TeamController extends Controller
     public function create()
     {
         //
+        return view('series/create');
     }
 
     /**
@@ -37,6 +43,18 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'serieName' => 'required',
+            'rating' => 'required'
+        ]);
+
+        $serie = new Serie;
+        $serie -> serieName = $request ->input('serieName');
+        $serie -> rating = $request -> input('rating');
+        $serie -> releaseDate = $request -> input('releaseDate');
+        $serie -> save();
+
+        return redirect ('series');
     }
 
     /**
@@ -48,6 +66,9 @@ class TeamController extends Controller
     public function show($id)
     {
         //
+        $serie = Serie::find($id);
+        return view('series/show', ['serie' => $serie]);
+
     }
 
     /**

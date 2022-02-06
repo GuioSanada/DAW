@@ -1,9 +1,8 @@
 <?php
 
+use App\Http\Controllers\filmsController;
+use App\Http\Controllers\seriesController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\PlayerController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('equipos', TeamController::class);
-
-Route::resource('jugadores', PlayerController::class);
-
+Route::resource('series', seriesController::class);
+Route::resource('films', filmsController::class);
