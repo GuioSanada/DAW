@@ -80,6 +80,8 @@ class seriesController extends Controller
     public function edit($id)
     {
         //
+        $serie = Serie::find($id);
+        return view('series/edit', ['serie' => $serie]);
     }
 
     /**
@@ -92,6 +94,21 @@ class seriesController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $this->validate($request, [
+            'serieName' => 'required',
+            'rating' => 'required',
+            'releaseDate' => 'required'
+        ]);
+        
+        $videogame = Serie::find($id);
+        $videogame->serieName = $request->input('serieName');
+        $videogame->rating = $request->input('rating');
+        $videogame->releaseDate = $request->input('releaseDate');
+        $videogame->save();
+
+        return redirect ('series');
+
     }
 
     /**
@@ -103,5 +120,7 @@ class seriesController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('series')->where('id', '=', $id)->delete();
+        return redirect('series');
     }
 }
