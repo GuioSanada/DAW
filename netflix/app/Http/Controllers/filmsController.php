@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Film;
 use DB;
 
 class filmsController extends Controller
@@ -15,6 +16,10 @@ class filmsController extends Controller
     public function index()
     {
         //
+        $films = DB::table('films')
+                    -> orderby('rating', 'desc') 
+                    -> get();
+        return view('films/index', ['films' => $films]);
     }
 
     /**
@@ -25,6 +30,7 @@ class filmsController extends Controller
     public function create()
     {
         //
+        return view('films/create');
     }
 
     /**
@@ -36,6 +42,18 @@ class filmsController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'filmName' => 'required',
+            'rating' => 'required'
+        ]);
+
+        $film = new Film;
+        $film -> filmName = $request ->input('filmName');
+        $film -> rating = $request -> input('rating');
+        $film -> releaseDate = $request -> input('releaseDate');
+        $film -> save();
+
+        return redirect ('films');
     }
 
     /**
@@ -47,6 +65,8 @@ class filmsController extends Controller
     public function show($id)
     {
         //
+        $film = Film::find($id);
+        return view('films/show', ['film' => $film]);
     }
 
     /**
@@ -58,6 +78,8 @@ class filmsController extends Controller
     public function edit($id)
     {
         //
+        $film = Film::find($id);
+        return view('films/edit', ['film' => $film]);
     }
 
     /**
@@ -70,6 +92,19 @@ class filmsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'filmName' => 'required',
+            'rating' => 'required',
+            'releaseDate' => 'required'
+        ]);
+        
+        $videogame = Film::find($id);
+        $videogame->filmName = $request->input('filmName');
+        $videogame->rating = $request->input('rating');
+        $videogame->releaseDate = $request->input('releaseDate');
+        $videogame->save();
+
+        return redirect ('films');
     }
 
     /**
@@ -81,5 +116,7 @@ class filmsController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('films')->where('id', '=', $id)->delete();
+        return redirect('films');
     }
 }

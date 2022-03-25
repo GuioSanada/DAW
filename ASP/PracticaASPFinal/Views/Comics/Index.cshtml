@@ -1,0 +1,100 @@
+﻿@using PracticaASPFinal.Util
+@model IEnumerable<PracticaASPFinal.Models.Comics>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div>
+    <form asp-controller="Comics" asp-action="Index">
+        <label for="SearchField">Campo a buscar:</label>
+        <select name="SearchField">
+            <option value="titulo">Título</option>
+            <option value="autor">Autor</option>
+            <option value="editorial">Editorial</option>
+        </select><br />
+        <label for="SearchField">Campo a ordenar:</label>
+        <select name="campToSort">
+            <option value="titulo">Título</option>
+            <option value="fecha">Fecha Publi</option>
+            <option value="paginas">Páginas</option>
+        </select><br />
+        <label for="SearchField">Tipo de ordenacion:</label>
+        <select name="typeOfSort">
+            <option value="asc">Asc</option>
+            <option value="desc">Desc</option>
+        </select><br />
+
+        <input type="text" name="SearchString" />
+        <input type="submit" value="Filtrar" />
+
+    </form>
+
+ 
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Editorial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_publicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paginas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinopsis)
+            </th>
+            <th>
+                Tiempo desde su salida
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Editorial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_publicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paginas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinopsis)
+            </td>
+            <td>
+                @Fecha.TimeTranscurrated(item.Fecha_publicacion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

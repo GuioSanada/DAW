@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--=============== CSS ===============-->
     <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <link href="./css/styleCookies.css" rel="stylesheet" type="text/css">
+    <link href="./css/styleModal.css" rel="stylesheet" type="text/css">
     <!--=============== REMIX ICONS ===============-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <!--=============== JavaScript ===============-->
@@ -13,6 +15,9 @@
     <script src="./js/claseCliente.js" defer></script>
     <script src="./js/funciones.js" defer></script>
     <script src="./js/diseño.js" defer></script>
+    <script src="js/cookies.js" type="text/javascript" defer></script>
+    <script src="js/modal.js" type="text/javascript" defer></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -31,17 +36,12 @@
             <li class="nav__item">
               <a href="#about" class="nav__link">About</a>
             </li>
-            <li class="nav__item">
-              <a href="#cajas" class="nav__link">Cajas</a>
-            </li>
-            <li class="nav__item">
-              <a href="#zonaPantalla" class="nav__link">Regex</a>
-            </li>
+            
             <li class="nav__item">
               <a href="#contact" class="nav__link">Contact</a>
             </li>
             <li class="nav__item">
-              <a href="./img/despliegue.pdf" class="nav__link">Despliegue</a>
+              <a href="./img/lighthouse.pdf" class="nav__link">Despliegue</a>
             </li>
           </ul>
 
@@ -65,9 +65,35 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
+      <div id="overbox3">
+        <div id="infobox3">
+            <p>Esta web utiliza cookies para obtener datos estadísticos de la navegación de sus usuarios. Si continúas navegando consideramos que aceptas su uso.
+            <a href="export.html">Más información</button>
+            <a onclick="aceptar_cookies();" style="cursor:pointer;" >Aceptar</a>
+            </p>
+        </div>
+      </div>
+      
+
+      
+      
+
 
       <!--==================== HOME ====================-->
       <section class="home" id="home">
+
+        
+        <div class="modal-container">
+          <div class="modal modal-close">
+            <p class="close">X</p>
+            <div class="modal-textos">
+              <img src="img/eden.jpg" alt="">
+              <h2>Sun Sea & Eden Beach</h2>
+            </div>
+          </div>
+        </div>
+
+
         <div class="home__container container grid">
           <img src="./img/catShop.jpg" alt="Imagen principal" class="home__img">
 
@@ -79,7 +105,7 @@
               Aquí encontrarás los mejores articulos al mejor precio. Encuentra todo tipo de tools
               para el hogar, alimentación, decoración...
             </p>
-            <a href="#about" class="button button--flex" id="about">
+            <a href="#" class="button button--flex" id="cta">
               Explore <i class="ri-arrow-right-down-line button__icon"></i>
             </a>
 
@@ -143,56 +169,9 @@
         </div>
       </section>
 
-      <!--==================== CAJAS ====================-->
-      <section class="steps section container" id="cajas">
-        <div class="steps__bg">
-            <h2 class="section__title-center steps__title">
-                Simulación de un <br> Supermercado
-            </h2>
-            <div class="steps__card" id="botonClientes" onclick="crearCliente(contador)" ><h3>Clientes: <span id="contadorClientes">0</span></h3></div>
-            <div class="steps__container grid">
-                <div class="steps__card" id="caja1">
-                    <div class="steps__card-number">Caja 01</div>
-                    <h3 class="steps__card-title">Clientes esperando: <span id="contadorCaja1">0</span></h3>
-                    <h3 class="steps__card-title">Total facturado: <span id="facturacionCaja1">0</span>€</h3>
-                </div>
+      
 
-                <div class="steps__card" id="caja2">
-                    <div class="steps__card-number">Caja 02</div>
-                    <h3 class="steps__card-title">Clientes esperando: <span id="contadorCaja2">0</span></h3>
-                    <h3 class="steps__card-title">Total facturado: <span id="facturacionCaja2">0</span>€</h3>
-                </div>
-
-                <div class="steps__card" id="caja3">
-                    <div class="steps__card-number"> Caja 03</div>
-                    <h3 class="steps__card-title">Clientes esperando: <span id="contadorCaja3">0</span></h3>
-                    <h3 class="steps__card-title">Total facturado: <span id="facturacionCaja3">0</span>€</h3>
-                </div>
-
-                <div class="steps__card" id="caja4">
-                  <div class="steps__card-number"> Caja 04</div>
-                  <h3 class="steps__card-title">Clientes esperando: <span id="contadorCaja4">0</span></h3>
-                  <h3 class="steps__card-title">Total facturado: <span id="facturacionCaja4">0</span>€</h3>
-              </div>
-            </div>
-        </div>
-      </section>
-
-      <!--==================== PANTALLA REGEX ====================-->
-      <section class="steps section container" id="zonaPantalla">
-        <div class="steps__bg flexbox">
-            <h2 class="section__title-center steps__title">
-                Consola de<br> Comandos
-            </h2>
-            <div class="steps__container  pantallaConsola">
-                <div id="pantallaConsola"></div>
-                <form onsubmit="return false" id="form">
-                  <input type="text" name="comandoConsola" id="comandoConsola" />
-                  <input type="button" name="enviar" value="Enviar" id="enviar" onclick="comandoConsolas()"/>
-                </form>
-            </div>
-        </div>
-      </section>
+      
 
       <!--==================== CONTACT ====================-->
       <section class="contact section container" id="contact">                
@@ -260,14 +239,17 @@
                 Suscribete a nuestra newsletter <br> para mantenerte actualizado.
             </h3>
 
-            <div class="footer__subscribe">
+            <form id="formul" class="footer__subscribe" method="post" action="https://formsubmit.co/afernandez.campos@gmail.com">
                 <input type="email" placeholder="Enter your email" class="footer__input">
-
-                <button class="button button--flex footer__button">
+                <input type="hidden" value="Te has suscrito" name="message"/>
+                <input type="hidden" name="_cc" value="Robin@DePooh.com">
+                <input type="hidden" name="_subject" value="Gracias por suscribirte">
+                
+                <button class="button button--flex footer__button" onclick="document.getElementById('formul').submit()">
                     Suscribete
                     <i class="ri-arrow-right-up-line button__icon"></i>
                 </button>
-            </div>
+              </form>
         </div>
 
         <div class="footer__content">

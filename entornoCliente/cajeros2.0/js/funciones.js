@@ -155,3 +155,12 @@ function comandoConsolas() {
 //         alert("Right mouse button clicked on element with id myId");
 //   }
 // });
+
+
+$(document).mouseleave(function () {
+  alert("pero no te vayas hombre")
+});
+
+$(document).mouseenter(function () {
+  alert("Gracias por volver")
+});
